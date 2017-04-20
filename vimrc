@@ -7,6 +7,17 @@ call plug#end()
 filetype on
 syntax on
 colorscheme Tomorrow-Night-Bright
+set wildignore=*.pyc
+set visualbell
+set noerrorbells
+set colorcolumn=100
+set number
+
+" Memory management stuff
+set hidden
+set history=100
+set nobackup
+set noswapfile
 
 " Status bar
 set laststatus=2
@@ -30,19 +41,6 @@ nnoremap ; :
 let mapleader=" "
 map <leader>s :source ~/.vimrc<CR>
 
-" General settings
-set wildignore=*.pyc
-set visualbell
-set noerrorbells
-set colorcolumn=100
-set number
-
-" Memory management stuff
-set hidden
-set history=100
-set nobackup
-set noswapfile
-
 " Indentation
 filetype plugin indent on
 set wrap
@@ -64,6 +62,7 @@ set smartcase
 set hlsearch
 
 " Jekyll / Markdown / Mathjax
+" TODO Figure out how to offload this into a separate file
 function! MathAndLiquid()
     "" Define certain regions
     " Block math. Look for "$$[anything]$$"
