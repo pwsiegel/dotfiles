@@ -1,16 +1,18 @@
 " Plugins (via plugged)
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 " Basic Settings
 filetype on
 syntax on
-colorscheme Tomorrow-Night-Bright
+set background=dark
+colorscheme solarized
 set wildignore=*.pyc
 set visualbell
 set noerrorbells
-set colorcolumn=100
+set colorcolumn=80
 set number
 
 " Memory management stuff
@@ -39,7 +41,7 @@ map <right> <nop>
 " Commands
 nnoremap ; :
 let mapleader=" "
-map <leader>s :source ~/.vimrc<CR>
+map <leader>s :source ~/.vim/vimrc<CR>
 
 " Indentation
 filetype plugin indent on

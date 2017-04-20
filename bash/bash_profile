@@ -19,7 +19,6 @@ alias bw="cd /Users/paul/bw"
 alias kgs="java -jar /Users/paul/cgoban.jar"
 alias desktop="cd /Users/paul/Desktop"
 alias downloads="cd /Users/paul/Downloads"
-alias boop="cd /Users/paul/bw"
 
 c++11() {
 	g++ -Wall -std=c++11 "$1"
