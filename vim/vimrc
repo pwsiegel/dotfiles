@@ -3,6 +3,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-sensible'
+Plug 'PProvost/vim-markdown-jekyll'
 call plug#end()
 
 " Basic Settings
