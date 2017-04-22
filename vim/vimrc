@@ -39,6 +39,8 @@ map <leader>s :source ~/.vim/vimrc<CR>
 
 " Jekyll / Markdown / Mathjax
 " TODO Figure out how to offload this into a separate file
+autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown set filetype=markdown
+
 function! MathAndLiquid()
     "" Define certain regions
     " Block math. Look for "$$[anything]$$"
@@ -60,6 +62,4 @@ function! MathAndLiquid()
     hi link math_block Function
 endfunction
 
-" Call everytime we open a Markdown file
-autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown set filetype=markdown,call MathAndLiquid()
-
+autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown call MathAndLiquid()
