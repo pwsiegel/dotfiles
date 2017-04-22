@@ -2,24 +2,20 @@
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-sensible'
 call plug#end()
 
 " Basic Settings
 filetype on
 syntax on
 set background=dark
+" let g:solarized_termcolors=256
 colorscheme solarized
 set wildignore=*.pyc
 set visualbell
 set noerrorbells
 set colorcolumn=80
 set number
-
-" Memory management stuff
-set hidden
-set history=100
-set nobackup
-set noswapfile
 
 " Status bar
 set laststatus=2
@@ -29,9 +25,6 @@ set statusline+=%{fugitive#statusline()}
 set statusline+=\ -
 set statusline+=\ %l/%L
 
-" Language specific
-autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown set filetype=markdown
-
 " Crutches for me to get used to vim:
 map <up> <nop>
 map <down> <nop>
@@ -39,29 +32,10 @@ map <left> <nop>
 map <right> <nop>
 
 " Commands
-nnoremap ; :
 let mapleader=" "
 map <leader>s :source ~/.vim/vimrc<CR>
 
-" Indentation
-filetype plugin indent on
-set wrap
-set tabstop=4
-set backspace=indent,eol,start
-set shiftwidth=4
-set expandtab
-set smartindent
-set smarttab
-set autoindent
-set copyindent
-set list
-
-" Brackets
-set showmatch
-
-" Search
-set smartcase
-set hlsearch
+" Language specific
 
 " Jekyll / Markdown / Mathjax
 " TODO Figure out how to offload this into a separate file
@@ -87,5 +61,5 @@ function! MathAndLiquid()
 endfunction
 
 " Call everytime we open a Markdown file
-autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown call MathAndLiquid()
+autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown set filetype=markdown,call MathAndLiquid()
 
