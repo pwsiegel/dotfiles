@@ -20,6 +20,10 @@ set noerrorbells
 set colorcolumn=80
 set number
 
+" Launch nerdtree with the command `vim`
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " Status bar
 set laststatus=2
 set statusline=%f
@@ -37,6 +41,7 @@ map <right> <nop>
 " Commands
 let mapleader=" "
 map <leader>s :source ~/.vim/vimrc<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 " Language specific
 
