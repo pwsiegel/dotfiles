@@ -14,7 +14,7 @@ if [ -f /Users/paul/google-cloud-sdk/completion.bash.inc ]; then
   source '/Users/paul/google-cloud-sdk/completion.bash.inc'
 fi
 
-alias bash_profile="atom /Users/paul/.bash_profile"
+alias bash_profile="vim /Users/paul/.bash_profile"
 alias bw="cd /Users/paul/bw"
 alias kgs="java -jar /Users/paul/cgoban.jar"
 alias desktop="cd /Users/paul/Desktop"

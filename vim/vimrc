@@ -4,6 +4,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-sensible'
 Plug 'PProvost/vim-markdown-jekyll'
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+Plug 'https://github.com/scrooloose/nerdtree'
 call plug#end()
 
 " Basic Settings
