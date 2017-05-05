@@ -1,11 +1,13 @@
 " Plugins (via plugged)
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-fugitive'
-Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-sensible'
+Plug 'altercation/vim-colors-solarized'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-syntastic/syntastic'
+" Plug 'Valloric/YouCompleteMe'
 Plug 'PProvost/vim-markdown-jekyll'
-Plug 'https://github.com/ctrlpvim/ctrlp.vim'
-Plug 'https://github.com/scrooloose/nerdtree'
 call plug#end()
 
 " Basic Settings
@@ -19,6 +21,8 @@ set visualbell
 set noerrorbells
 set colorcolumn=80
 set number
+set hlsearch
+set incsearch
 
 " Launch nerdtree with the command `vim`
 autocmd StdinReadPre * let s:std_in=1
@@ -42,6 +46,16 @@ map <right> <nop>
 let mapleader=" "
 map <leader>s :source ~/.vim/vimrc<CR>
 map <leader>n :NERDTreeToggle<CR>
+map <leader>gs :Gstatus<CR>
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " Language specific
 

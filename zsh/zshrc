@@ -54,7 +54,7 @@ DEFAULT_USER="paul"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws docker jsontools osx pip pyenv python sbt scala web-search)
+plugins=(git aws docker jsontools osx web-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -86,3 +86,11 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+alias kgs="java -jar ~/cgoban.jar"
+
+#Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
