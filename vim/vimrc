@@ -28,6 +28,7 @@ set noerrorbells
 set colorcolumn=80
 set number
 set hlsearch
+set clipboard=unnamed
 
 " Indentation
 set tabstop=4
@@ -49,11 +50,13 @@ set statusline+=%{fugitive#statusline()}
 set statusline+=\ -
 set statusline+=\ %l/%L
 
-" Commands
+" Leader Commands
 let mapleader=" "
-map <leader>s :source ~/.vim/vimrc<CR>
+map <leader>s :source ~/.vim/vimrc<CR>:nohls<CR>
 map <leader>gs :Gstatus<CR>
 map <leader>h :nohls<CR>
+set pastetoggle=<leader>p
+
 " Nerdtree Settings
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
