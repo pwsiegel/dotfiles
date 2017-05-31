@@ -28,7 +28,7 @@ set noerrorbells
 set colorcolumn=80
 set number
 set hlsearch
-set clipboard=unnamed
+set clipboard=unnamed " Requires vim to be compiled with +clipboard option
 
 " Indentation
 set tabstop=4
@@ -50,7 +50,7 @@ set statusline+=%{fugitive#statusline()}
 set statusline+=\ -
 set statusline+=\ %l/%L
 
-" Leader Commands
+" Leader
 let mapleader=" "
 map <leader>s :source ~/.vim/vimrc<CR>:nohls<CR>
 map <leader>gs :Gstatus<CR>
