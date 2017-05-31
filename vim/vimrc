@@ -28,7 +28,6 @@ set noerrorbells
 set colorcolumn=80
 set number
 set hlsearch
-noremap / :noh<CR>/
 
 " Indentation
 set tabstop=4
@@ -54,7 +53,7 @@ set statusline+=\ %l/%L
 let mapleader=" "
 map <leader>s :source ~/.vim/vimrc<CR>
 map <leader>gs :Gstatus<CR>
-
+map <leader>h :nohls<CR>
 " Nerdtree Settings
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
