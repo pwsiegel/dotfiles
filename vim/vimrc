@@ -50,11 +50,13 @@ set statusline+=%{fugitive#statusline()}
 set statusline+=\ -
 set statusline+=\ %l/%L
 
-" Leader
+" Mappings
 let mapleader=" "
 map <leader>s :source ~/.vim/vimrc<CR>:nohls<CR>
 map <leader>gs :Gstatus<CR>
 map <leader>h :nohls<CR>
+noremap <C-l> :tabn<CR>
+noremap <C-h> :tabp<CR>
 set pastetoggle=<leader>p
 
 " Nerdtree Settings
