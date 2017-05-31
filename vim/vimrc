@@ -1,12 +1,18 @@
 " Plugins (via plugged)
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-sensible'
-Plug 'altercation/vim-colors-solarized'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
+Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ervandew/supertab'
+Plug 'jiangmiao/auto-pairs'
 Plug 'vim-syntastic/syntastic'
-" Plug 'Valloric/YouCompleteMe'
+Plug 'davidhalter/jedi-vim'
+Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'PProvost/vim-markdown-jekyll'
 call plug#end()
 
@@ -22,11 +28,19 @@ set noerrorbells
 set colorcolumn=80
 set number
 set hlsearch
-set incsearch
+noremap / :noh<CR>/
 
-" Launch nerdtree with the command `vim`
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" Indentation
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" Disable arrow keys 
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
 
 " Status bar
 set laststatus=2
@@ -36,26 +50,24 @@ set statusline+=%{fugitive#statusline()}
 set statusline+=\ -
 set statusline+=\ %l/%L
 
-" Crutches for me to get used to vim:
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-
 " Commands
 let mapleader=" "
 map <leader>s :source ~/.vim/vimrc<CR>
-map <leader>n :NERDTreeToggle<CR>
 map <leader>gs :Gstatus<CR>
 
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Nerdtree Settings
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+
+" Syntastic Settings
+let g:syntastic_mode_map = {"mode": "passive"}
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+command! Synerr let g:syntastic_quiet_messages = {"!level": "errors"} | SyntasticCheck
+command! Synall let g:syntastic_quiet_messages = {} | SyntasticCheck
+command! Synoff SyntasticReset 
 
 " Language specific
 
