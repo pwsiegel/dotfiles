@@ -1,0 +1,19 @@
+# Global .gitignore File
+# git config --global core.excludesfile ~/.gitignore_global
+
+# Python #
+__pycache__/
+eggs/
+.eggs/
+*.egg-info/
+*.egg
+.ipynb_checkpoints
+.python-version
+
+# Scala #
+
+# OSX #
+.DS_Store*
+
+# Intellij #
+.idea/
