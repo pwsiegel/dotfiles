@@ -1,5 +1,5 @@
 # Global .gitignore File
-# git config --global core.excludesfile ~/.gitignore_global
+# git config --global core.excludesfile path/to/this/file
 
 # Python #
 __pycache__/
