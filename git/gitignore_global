@@ -17,3 +17,6 @@ eggs/
 
 # Intellij #
 .idea/
+
+# Vim #
+*.swp
