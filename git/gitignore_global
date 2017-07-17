@@ -9,6 +9,7 @@ eggs/
 *.egg
 .ipynb_checkpoints
 .python-version
+.pyenv/
 
 # Scala #
 
