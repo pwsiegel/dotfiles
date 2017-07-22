@@ -12,6 +12,7 @@ Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-syntastic/syntastic'
 Plug 'davidhalter/jedi-vim'
+Plug 'lambdalisue/vim-pyenv'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'PProvost/vim-markdown-jekyll'
 call plug#end()

@@ -89,7 +89,8 @@ source $ZSH/oh-my-zsh.sh
 
 alias kgs="java -jar ~/cgoban.jar"
 
-BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
-export BROWSER
+export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+export VISUAL=vim
+export EDITOR="$VISUAL"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
