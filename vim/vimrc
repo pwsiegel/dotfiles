@@ -74,6 +74,9 @@ command! Synerr let g:syntastic_quiet_messages = {"!level": "errors"} | Syntasti
 command! Synall let g:syntastic_quiet_messages = {} | SyntasticCheck
 command! Synoff SyntasticReset 
 
+" Jedi-Vim Settings
+let g:jedi#popup_on_dot = 0
+
 " Language specific
 
 " Jekyll / Markdown / Mathjax
