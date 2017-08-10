@@ -18,7 +18,7 @@ Plug 'PProvost/vim-markdown-jekyll'
 call plug#end()
 
 " Basic Settings
-filetype on
+filetype plugin indent on
 syntax on
 set background=dark
 " let g:solarized_termcolors=256
@@ -36,7 +36,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-set autoindent
 
 " Disable arrow keys 
 map <up> <nop>
