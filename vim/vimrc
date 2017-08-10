@@ -74,6 +74,9 @@ command! Synerr let g:syntastic_quiet_messages = {"!level": "errors"} | Syntasti
 command! Synall let g:syntastic_quiet_messages = {} | SyntasticCheck
 command! Synoff SyntasticReset 
 
+" Supertab Settings
+let g:SuperTabDefaultCompletionType = "context"
+
 " Jedi-Vim Settings
 let g:jedi#popup_on_dot = 0
 
