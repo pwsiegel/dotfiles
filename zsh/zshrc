@@ -55,7 +55,7 @@ DEFAULT_USER="paul"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git aws docker jsontools pyenv osx web-search)
-plugins=(pyenv web-search)
+plugins=(pyenv web-search fasd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -87,6 +87,20 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+prompt_end() {
+  if [[ -n $CURRENT_BG ]]; then
+      print -n "%{%k%F{$CURRENT_BG}%}$SEGMENT_SEPARATOR"
+  else
+      print -n "%{%k%}"
+  fi
+
+  print -n "%{%f%}"
+  CURRENT_BG='' 
+
+  #Adds the new line and ➜ as the start character.
+  printf "\n ➜";
+}
 
 alias kgs="java -jar ~/cgoban.jar"
 
