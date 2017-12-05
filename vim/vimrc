@@ -20,6 +20,7 @@ call plug#end()
 " Basic Settings
 filetype plugin indent on
 syntax on
+set noswapfile
 set background=dark
 " let g:solarized_termcolors=256
 colorscheme solarized
@@ -30,6 +31,7 @@ set colorcolumn=80
 set number
 set hlsearch
 set clipboard^=unnamed " Requires vim to be compiled with +clipboard option
+set mouse=a
 
 " Indentation
 set tabstop=4
