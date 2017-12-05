@@ -108,5 +108,6 @@ bindkey -v
 export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 export VISUAL=vim
 export EDITOR="$VISUAL"
+export PATH=$PATH:/Users/paul/spark-2.2.0-bin-custom-spark/bin
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
