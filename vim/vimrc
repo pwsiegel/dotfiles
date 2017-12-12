@@ -31,7 +31,11 @@ set colorcolumn=80
 set number
 set hlsearch
 set clipboard^=unnamed " Requires vim to be compiled with +clipboard option
+
+" Mouse
 set mouse=a
+map <LeftMouse> <nop>
+map <2-LeftMouse> <nop>
 
 " Indentation
 set tabstop=4
