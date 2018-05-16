@@ -12,9 +12,9 @@ Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
 Plug 'vim-syntastic/syntastic'
 Plug 'davidhalter/jedi-vim'
-Plug 'lambdalisue/vim-pyenv'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'PProvost/vim-markdown-jekyll'
+Plug 'lervag/vimtex'
 call plug#end()
 
 " Basic Settings
@@ -30,7 +30,7 @@ set noerrorbells
 set colorcolumn=80
 set number
 set hlsearch
-set clipboard^=unnamed " Requires vim to be compiled with +clipboard option
+set clipboard=unnamed " Requires vim to be compiled with +clipboard option
 
 " Mouse
 set mouse=a
@@ -72,13 +72,14 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 
 " Syntastic Settings
-let g:syntastic_mode_map = {"mode": "passive"}
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-command! Synerr let g:syntastic_quiet_messages = {"!level": "errors"} | SyntasticCheck
-command! Synall let g:syntastic_quiet_messages = {} | SyntasticCheck
-command! Synoff SyntasticReset 
+let g:syntastic_mode_map = {"mode": "passive"}
+" command! Synerr let g:syntastic_quiet_messages = {"!level": "errors"} | SyntasticCheck
+" command! Synall let g:syntastic_quiet_messages = {} | SyntasticCheck
+" command! Synoff SyntasticReset 
 
 " Supertab Settings
 let g:SuperTabDefaultCompletionType = "context"
