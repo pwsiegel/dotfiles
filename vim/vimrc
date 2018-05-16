@@ -30,7 +30,7 @@ set noerrorbells
 set colorcolumn=80
 set number
 set hlsearch
-set clipboard=unnamed " Requires vim to be compiled with +clipboard option
+set clipboard^=unnamed " Requires vim to be compiled with +clipboard option
 
 " Mouse
 set mouse=a
