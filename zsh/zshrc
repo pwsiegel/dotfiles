@@ -1,4 +1,5 @@
 # If you come from bash you might have to change your $PATH.
+
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
@@ -102,6 +103,7 @@ prompt_end() {
   printf "\n ➜";
 }
 
+export PIP_REQUIRE_VIRTUALENV=true
 alias kgs="java -jar ~/cgoban.jar"
 
 bindkey -v
@@ -111,3 +113,10 @@ export EDITOR="$VISUAL"
 export PATH=$PATH:/Users/paul/spark-2.2.0-bin-custom-spark/bin
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/paul/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/paul/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/paul/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/paul/google-cloud-sdk/completion.zsh.inc'; fi
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
