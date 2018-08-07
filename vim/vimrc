@@ -5,16 +5,24 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-commentary'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
-Plug 'vim-syntastic/syntastic'
 Plug 'davidhalter/jedi-vim'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'lervag/vimtex'
+Plug 'w0rp/ale'
+Plug 'isruslan/vim-es6'
+Plug 'mxw/vim-jsx'
+Plug 'prettier/vim-prettier', {
+\ 'do': 'yarn install',
+\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue'] 
+\}
 call plug#end()
 
 " Basic Settings
@@ -30,7 +38,7 @@ set noerrorbells
 set colorcolumn=80
 set number
 set hlsearch
-set clipboard^=unnamed " Requires vim to be compiled with +clipboard option
+set clipboard^=unnamed " copy to the system clipboard
 
 " Mouse
 set mouse=a
@@ -71,15 +79,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 
-" Syntastic Settings
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_mode_map = {"mode": "passive"}
-" command! Synerr let g:syntastic_quiet_messages = {"!level": "errors"} | SyntasticCheck
-" command! Synall let g:syntastic_quiet_messages = {} | SyntasticCheck
-" command! Synoff SyntasticReset 
+let g:ale_pattern_options = {'.*\.tex$': {'ale_enabled': 0}}
 
 " Supertab Settings
 let g:SuperTabDefaultCompletionType = "context"
@@ -88,6 +88,18 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:jedi#popup_on_dot = 0
 
 " Language specific
+
+" JS
+let g:prettier#autoformat = 0
+let g:prettier#quickfix_auto_focus = 0
+let g:prettier#config#tab_width = 4
+let g:prettier#config#print_width = 140
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#trailing_comma = 'es5'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+set suffixesadd+=.js
+let g:jsx_ext_required = 0 " Allow JSX in normal JS files
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
 
 " Jekyll / Markdown / Mathjax
 " TODO Figure out how to offload this into a separate file
