@@ -1,3 +1,5 @@
+#----------Standard Oh my ZSH settings----------#
+
 # If you come from bash you might have to change your $PATH.
 
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -18,7 +20,7 @@ DEFAULT_USER="paul"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -55,39 +57,12 @@ DEFAULT_USER="paul"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(git aws docker jsontools pyenv osx web-search)
+
 plugins=(pyenv web-search fasd)
 
 source $ZSH/oh-my-zsh.sh
 
-# User configuration
-
-# export MANPATH="/usr/local/man:$MANPATH"
-
-# You may need to manually set your language environment
-# export LANG=en_US.UTF-8
-
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+#----------Prompt customization----------#
 
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
@@ -103,20 +78,36 @@ prompt_end() {
   printf "\n ➜";
 }
 
-export PIP_REQUIRE_VIRTUALENV=true
-alias kgs="java -jar ~/cgoban.jar"
-
-bindkey -v
-export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
-export VISUAL=vim
-export EDITOR="$VISUAL"
-export PATH=$PATH:/Users/paul/spark-2.2.0-bin-custom-spark/bin
-
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+#----------Google cloud----------#
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/Users/paul/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/paul/google-cloud-sdk/path.zsh.inc'; fi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/paul/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/paul/google-cloud-sdk/completion.zsh.inc'; fi
+
+#----------Python----------#
+
+export PIP_REQUIRE_VIRTUALENV=true
+
+#----------NVM----------#
+
+export NVM_DIR="$HOME/.nvm"
+alias loadnvm="[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh""  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+#----------Spark----------#
+
+export PATH=$PATH:/Users/paul/spark-2.2.0-bin-custom-spark/bin
+
+#----------Defaults----------#
+
+export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+#----------Miscellaneous----------#
+
+bindkey -v  # Vim mode for the shell
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+alias kgs="java -jar ~/cgoban.jar"
