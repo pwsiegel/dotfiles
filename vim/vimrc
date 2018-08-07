@@ -7,6 +7,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -58,12 +60,13 @@ map <left> <nop>
 map <right> <nop>
 
 " Status bar
-set laststatus=2
-set statusline=%f
-set statusline+=%=
-set statusline+=%{fugitive#statusline()}
-set statusline+=\ -
-set statusline+=\ %l/%L
+let g:airline_theme='luna'
+" set laststatus=2
+" set statusline=%f
+" set statusline+=%=
+" set statusline+=%{fugitive#statusline()}
+" set statusline+=\ -
+" set statusline+=\ %l/%L
 
 " Mappings
 let mapleader=" "
@@ -86,8 +89,6 @@ let g:SuperTabDefaultCompletionType = "context"
 
 " Jedi-Vim Settings
 let g:jedi#popup_on_dot = 0
-
-" Language specific
 
 " JS
 let g:prettier#autoformat = 0
