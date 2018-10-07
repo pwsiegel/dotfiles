@@ -98,7 +98,7 @@ alias loadnvm="[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh""  # This loads n
 
 #----------Spark----------#
 
-export PATH=$PATH:/Users/paul/spark-2.2.0-bin-custom-spark/bin
+export PATH="$PATH:/Users/paul/spark-2.2.0-bin-custom-spark/bin"
 
 #----------Defaults----------#
 
