@@ -11,11 +11,10 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'jiangmiao/auto-pairs'
-Plug 'davidhalter/jedi-vim'
-Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'lervag/vimtex'
 Plug 'w0rp/ale'
@@ -23,7 +22,7 @@ Plug 'isruslan/vim-es6'
 Plug 'mxw/vim-jsx'
 Plug 'prettier/vim-prettier', {
 \ 'do': 'yarn install',
-\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue'] 
+\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue']
 \}
 call plug#end()
 
@@ -53,20 +52,25 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 
-" Disable arrow keys 
+" Map arrow keys to buffer switching
+nnoremap <Left> :bp<CR>
+nnoremap <Right> :bn<CR>
+" But ignore when in nerdtree/ctrlsf
+autocmd FileType nerdtree noremap <buffer> <Left> <nop>
+autocmd FileType nerdtree noremap <buffer> <Right> <nop>
 map <up> <nop>
 map <down> <nop>
-map <left> <nop>
-map <right> <nop>
 
+" Configure airline
+let g:airline#extensions#ale#enabled = 1
+" Install Roboto Light from https://github.com/powerline/fonts
+let g:airline_powerline_fonts = 1
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
 " Status bar
 let g:airline_theme='luna'
-" set laststatus=2
-" set statusline=%f
-" set statusline+=%=
-" set statusline+=%{fugitive#statusline()}
-" set statusline+=\ -
-" set statusline+=\ %l/%L
 
 " Mappings
 let mapleader=" "
@@ -81,8 +85,19 @@ set pastetoggle=<leader>p
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeQuitOnOpen = 1
 
+" Setup ctrlp"
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|build'
+let g:ctrlp_open_multiple_files = 'ij'
+if executable("ag")
+    let g:ctrlp_user_command = 'ag %s -l --nocolor --depth 8 -g ""'
+endif
+
+" Ale Settings
 let g:ale_pattern_options = {'.*\.tex$': {'ale_enabled': 0}}
+nmap <silent> <leader>W <Plug>(ale_previous_wrap)
+nmap <silent> <leader>w <Plug>(ale_next_wrap)
 
 " Supertab Settings
 let g:SuperTabDefaultCompletionType = "context"
