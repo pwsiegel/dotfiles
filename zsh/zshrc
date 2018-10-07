@@ -62,6 +62,11 @@ plugins=(pyenv web-search fasd)
 
 source $ZSH/oh-my-zsh.sh
 
+#----------Aliases and scripts----------#
+
+export PATH="$PATH:$HOME/dotfiles/bin"
+alias kgs="java -jar ~/cgoban.jar"
+
 #----------Prompt customization----------#
 
 prompt_end() {
@@ -72,19 +77,16 @@ prompt_end() {
   fi
 
   print -n "%{%f%}"
-  CURRENT_BG='' 
+  CURRENT_BG=''
 
   #Adds the new line and ➜ as the start character.
   printf "\n ➜";
 }
 
-#----------Google cloud----------#
+#----------Shell configuration----------#
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/paul/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/paul/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/paul/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/paul/google-cloud-sdk/completion.zsh.inc'; fi
+bindkey -v  # Vim mode for the shell
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 #----------Python----------#
 
@@ -106,8 +108,10 @@ export BROWSER=/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-#----------Miscellaneous----------#
+#----------Google cloud----------#
 
-bindkey -v  # Vim mode for the shell
-test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-alias kgs="java -jar ~/cgoban.jar"
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/paul/google-cloud-sdk/path.zsh.inc' ]; then source '/Users/paul/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/paul/google-cloud-sdk/completion.zsh.inc' ]; then source '/Users/paul/google-cloud-sdk/completion.zsh.inc'; fi
