@@ -6,6 +6,9 @@ name = "pypi"
 [packages]
 pandas = "*"
 jupyter = "*"
+"boto3" = "*"
+bwapi = "*"
+scikit-learn = "*"
 
 [dev-packages]
 
