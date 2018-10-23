@@ -28,11 +28,6 @@ fi
 key_id=$(grep "$profile" "$AWS_CRED_FILE" -A 2 | tail -2 | head -1 | awk '{print $NF}')
 secret_key=$(grep "$profile" "$AWS_CRED_FILE" -A 2 | tail -2 | tail -1 | awk '{print $NF}')
 
-echo $mode
-echo $profile
-echo $key_id
-echo $secret_key
-
 if [ "$mode" = "id" ]; then
     echo "$key_id" | tr -d "\n" | pbcopy
     echo "aws_access_key_id for profile $profile copied to clipboard"
