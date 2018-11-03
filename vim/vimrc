@@ -1,5 +1,8 @@
+let g:python3_host_prog = 'python3'
+
 " Plugins (via plugged)
 call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -9,12 +12,17 @@ Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'altercation/vim-colors-solarized'
+Plug 'flazz/vim-colorschemes'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
-" Plug 'jiangmiao/auto-pairs'
+Plug 'Shougo/deoplete.nvim'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
+Plug 'davidhalter/jedi'
+Plug 'zchee/deoplete-jedi'
+Plug 'nvie/vim-flake8'
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'lervag/vimtex'
 Plug 'w0rp/ale'
@@ -30,6 +38,7 @@ call plug#end()
 filetype plugin indent on
 syntax on
 set noswapfile
+syntax sync minlines=10000
 set background=dark
 " let g:solarized_termcolors=256
 colorscheme solarized
@@ -74,36 +83,35 @@ let g:airline_theme='luna'
 
 " Mappings
 let mapleader=" "
-map <leader>s :source ~/.vim/vimrc<CR>:nohls<CR>
-map <leader>gs :Gstatus<CR>
-map <leader>h :nohls<CR>
+nnoremap <leader>s :source ~/.vim/vimrc<CR>:nohls<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>h :nohls<CR>
+nnoremap <leader>c :bd<CR>
 noremap <C-l> :tabn<CR>
 noremap <C-h> :tabp<CR>
 set pastetoggle=<leader>p
 
-" Nerdtree Settings
+" Nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen = 1
 
-" Setup ctrlp"
+" Ctrlp
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|build'
 let g:ctrlp_open_multiple_files = 'ij'
 if executable("ag")
     let g:ctrlp_user_command = 'ag %s -l --nocolor --depth 8 -g ""'
 endif
 
-" Ale Settings
+" Ale
 let g:ale_pattern_options = {'.*\.tex$': {'ale_enabled': 0}}
 nmap <silent> <leader>W <Plug>(ale_previous_wrap)
 nmap <silent> <leader>w <Plug>(ale_next_wrap)
 
-" Supertab Settings
-let g:SuperTabDefaultCompletionType = "context"
-
-" Jedi-Vim Settings
-let g:jedi#popup_on_dot = 0
+" Deoplete
+call deoplete#enable()
+let g:jedi#auto_vim_configuration = 1
 
 " JS
 let g:prettier#autoformat = 0
