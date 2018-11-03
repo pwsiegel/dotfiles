@@ -8,7 +8,7 @@ else
     exit
 fi
 
-if [ -z ${ZSH+x} ]; then
+if ! echo $SHELL | grep -q zsh; then
     rm "$HOME/.zshrc"
     ln -s "$HOME/dotfiles/dev_server/dev-zshrc" "$HOME/.zshrc"
     sudo usermod -s /bin/zsh ec2-user
