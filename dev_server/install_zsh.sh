@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+set -uo pipefail
 
 which zsh > /dev/null 2>&1
 if [ $? -ne 0 ]; then

@@ -1,4 +1,11 @@
 #!/usr/bin/env bash
+set -uo pipefail
+
+if [ -z ${1+x} ]; then
+    python="3.6.5"
+else
+    python="$1"
+fi
 
 DOTFILES="$HOME/.dotfiles"
 
@@ -12,7 +19,7 @@ if [ $? -ne 0 ]; then
 fi
 
 source "$DOTFILES/dev_server/install_zsh.sh"
-source "$DOTFILES/dev_server/install_pyenv.sh"
+source "$DOTFILES/dev_server/install_pyenv.sh $python"
 source "$DOTFILES/dev_server/install_vim.sh"
 
 echo "Please log out and back in for settings to take effect."
