@@ -2,7 +2,7 @@
 
 DOTFILES="$HOME/dotfiles"
 
-git
+which git
 if [ $? -ne 0 ]; then
     sudo yum update
     sudo yum install git
