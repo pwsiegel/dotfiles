@@ -3,13 +3,12 @@ set -o pipefail
 
 #-----Parse command line arguments-----#
 
-while getopts "p" opt; do
+python=3.6.5
+
+while getopts "p:" opt; do
     case $opt in
         p)
-            python=${OPTARG}
-            ;;
-        ?)
-            python="3.6.5"
+            python="${OPTARG}"
             ;;
     esac
 done
@@ -30,9 +29,9 @@ fi
 
 #-----Install the rest-----#
 
-source "$DOTFILES/dev_server/install_zsh.sh"
-source "$DOTFILES/dev_server/install_pyenv.sh" "$python"
-source "$DOTFILES/dev_server/install_vim.sh"
+. "$DOTFILES"/dev_server/install_zsh.sh
+. "$DOTFILES"/dev_server/install_pyenv.sh "$python"
+. "$DOTFILES"/dev_server/install_vim.sh
 
 echo "To install vim plugins, run the vim command :PlugInstall."
 echo "Please log out and back in for settings to take effect."
