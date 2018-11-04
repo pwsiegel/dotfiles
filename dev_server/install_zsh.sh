@@ -9,7 +9,6 @@ fi
 echo $SHELL | grep -q zsh > /dev/null 2>&1
 if [ $? -ne 0 ]; then
     rm "$HOME/.zshrc"
-    ln -s "$HOME/dotfiles/dev_server/dev-zshrc" "$HOME/.zshrc"
+    ln -s "$HOME/.dotfiles/dev_server/dev-zshrc" "$HOME/.zshrc"
     sudo usermod -s /bin/zsh ec2-user
-    echo "Please restart shell for zsh settings to take effect"
 fi

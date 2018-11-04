@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DOTFILES="$HOME/dotfiles"
+DOTFILES="$HOME/.dotfiles"
 
 which git > /dev/null 2>&1 
 if [ $? -ne 0 ]; then
@@ -14,3 +14,6 @@ fi
 source "$DOTFILES/dev_server/install_zsh.sh"
 source "$DOTFILES/dev_server/install_pyenv.sh"
 source "$DOTFILES/dev_server/install_vim.sh"
+
+echo "Please log out and back in for settings to take effect."
+echo "To install vim plugins, run the vim command :PlugInstall."
