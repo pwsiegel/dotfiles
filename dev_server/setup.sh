@@ -12,5 +12,5 @@ if [ $? -ne 0 ]; then
 fi
 
 source "$DOTFILES/dev_server/install_zsh.sh"
-source "$DOTFILES/dev_server/install_python.sh"
+source "$DOTFILES/dev_server/install_pyenv.sh"
 source "$DOTFILES/dev_server/install_vim.sh"
