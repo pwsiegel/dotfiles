@@ -1,0 +1,87 @@
+" Plugins (via plugged)
+call plug#begin('~/.vim/plugged')
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-ragtag'
+Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'flazz/vim-colorschemes'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'ervandew/supertab'
+call plug#end()
+
+" Basic Settings
+filetype plugin indent on
+syntax on
+set noswapfile
+syntax sync minlines=10000
+set background=dark
+colorscheme solarized
+set wildignore=*.pyc
+set visualbell
+set noerrorbells
+set colorcolumn=80
+set number
+set hlsearch
+set clipboard^=unnamed " copy to the system clipboard
+
+" Mouse
+set mouse=a
+map <LeftMouse> <nop>
+map <2-LeftMouse> <nop>
+
+" Indentation
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4
+set expandtab
+
+" Map arrow keys to buffer switching
+nnoremap <Left> :bp<CR>
+nnoremap <Right> :bn<CR>
+" But ignore when in nerdtree/ctrlsf
+autocmd FileType nerdtree noremap <buffer> <Left> <nop>
+autocmd FileType nerdtree noremap <buffer> <Right> <nop>
+map <up> <nop>
+map <down> <nop>
+
+" Configure airline
+let g:airline#extensions#ale#enabled = 1
+" Install Roboto Light from https://github.com/powerline/fonts
+let g:airline_powerline_fonts = 1
+" Enable the list of buffers
+let g:airline#extensions#tabline#enabled = 1
+" Show just the filename
+let g:airline#extensions#tabline#fnamemod = ':t'
+" Status bar
+let g:airline_theme='luna'
+
+" Mappings
+let mapleader=" "
+nnoremap <leader>s :source ~/.vim/vimrc<CR>:nohls<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>h :nohls<CR>
+nnoremap <leader>c :bd<CR>
+noremap <C-l> :tabn<CR>
+noremap <C-h> :tabp<CR>
+set pastetoggle=<leader>p
+
+" Nerdtree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeQuitOnOpen = 1
+
+" Ctrlp
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|build'
+let g:ctrlp_open_multiple_files = 'ij'
+if executable("ag")
+    let g:ctrlp_user_command = 'ag %s -l --nocolor --depth 8 -g ""'
+endif
