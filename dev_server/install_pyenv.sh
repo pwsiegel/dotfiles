@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -uo pipefail
+set -o pipefail
 
 if [ -z ${1+x} ]; then
     echo "Error: must pass python version to install_python"

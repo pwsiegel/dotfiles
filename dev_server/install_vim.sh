@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -uo pipefail
+set -o pipefail
 
 ls "$HOME/.vim" > /dev/null 2>&1
 if [ $? -ne 0 ]; then
