@@ -1,11 +1,21 @@
 #!/usr/bin/env bash
 set -uo pipefail
 
-if [ -z ${1+x} ]; then
-    python="3.6.5"
-else
-    python="$1"
-fi
+#-----Parse command line arguments-----#
+
+while getopts "p" opt; do
+    case $opt in
+        p)
+            python=${OPTARG}
+            ;;
+        ?)
+            python="3.6.5"
+            ;;
+    esac
+done
+shift $(($OPTIND -1))
+
+#-----Clone dotfiles-----#
 
 DOTFILES="$HOME/.dotfiles"
 
@@ -18,9 +28,11 @@ if [ $? -ne 0 ]; then
     git -C "$DOTFILES" checkout dev-server
 fi
 
+#-----Install the rest-----#
+
 source "$DOTFILES/dev_server/install_zsh.sh"
-source "$DOTFILES/dev_server/install_pyenv.sh $python"
+source "$DOTFILES/dev_server/install_pyenv.sh" "$python"
 source "$DOTFILES/dev_server/install_vim.sh"
 
-echo "Please log out and back in for settings to take effect."
 echo "To install vim plugins, run the vim command :PlugInstall."
+echo "Please log out and back in for settings to take effect."
