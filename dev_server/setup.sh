@@ -2,7 +2,7 @@
 
 DOTFILES="$HOME/dotfiles"
 
-which git
+which git > /dev/null 2>&1 
 if [ $? -ne 0 ]; then
     sudo yum update
     sudo yum install git
@@ -12,3 +12,5 @@ if [ $? -ne 0 ]; then
 fi
 
 source "$DOTFILES/dev_server/install_zsh.sh"
+source "$DOTFILES/dev_server/install_python.sh"
+source "$DOTFILES/dev_server/install_vim.sh"
