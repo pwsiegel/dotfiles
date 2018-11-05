@@ -23,8 +23,6 @@ if [ $? -ne 0 ]; then
     sudo yum update
     sudo yum install git
     git clone https://github.com/pwsiegel/dotfiles.git "$DOTFILES"
-
-    git -C "$DOTFILES" checkout dev-server
 fi
 
 #-----Install the rest-----#
