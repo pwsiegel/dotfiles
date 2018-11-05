@@ -79,13 +79,14 @@ prompt_end() {
   print -n "%{%f%}"
   CURRENT_BG=''
 
-  #Adds the new line and ➜ as the start character.
+  # Adds the new line and ➜ as the start character.
   printf "\n ➜";
 }
 
 #----------Shell configuration----------#
 
 bindkey -v  # Vim mode for the shell
+ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&' # Fixes behavior involving autocomplete and pipes
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 #----------Python----------#
