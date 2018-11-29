@@ -64,7 +64,7 @@ source $ZSH/oh-my-zsh.sh
 
 #----------Aliases and scripts----------#
 
-export PATH="$PATH:$HOME/dotfiles/bin"
+export PATH="$PATH:$HOME/dotfiles/bin:$HOME/.local/bin"
 alias kgs="java -jar ~/cgoban.jar"
 
 #----------Prompt customization----------#
