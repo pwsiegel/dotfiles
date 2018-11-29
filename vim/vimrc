@@ -38,6 +38,7 @@ call plug#end()
 filetype plugin indent on
 syntax on
 set noswapfile
+set hidden " Allow switching between unsaved buffers
 syntax sync minlines=10000
 set background=dark
 " let g:solarized_termcolors=256
