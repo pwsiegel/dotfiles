@@ -10,6 +10,7 @@ jupyter = "*"
 bwapi = "*"
 scikit-learn = "*"
 matplotlib = "*"
+pyarrow = "*"
 
 [dev-packages]
 
