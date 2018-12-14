@@ -99,6 +99,10 @@ export NVM_DIR="$HOME/.nvm"
 alias loadnvm="[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh""  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+#----------Flintrock----------#
+
+export FLINTROCK_CONFIG_PATH="$HOME/.config/flintrock/config.yaml"
+
 #----------Spark----------#
 
 export PATH="$PATH:/Users/paul/spark-2.2.0-bin-custom-spark/bin"

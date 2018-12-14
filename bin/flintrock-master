@@ -1,0 +1,3 @@
+#!/bin/bash
+
+flintrock describe "$1" | grep master | awk '{ print "ec2-user@" $NF ":~/" }' | tr -d "\n" | pbcopy

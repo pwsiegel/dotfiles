@@ -1,4 +1,4 @@
 #!/bin/bash
 
 export DEFAULT_FLINTROCK_REPO="$HOME/dotfiles/python_envs/flintrock"
-PIPENV_PIPFILE="$DEFAULT_FLINTROCK_REPO/Pipfile" pipenv run flintrock "$@"
+PIPENV_PIPFILE="$DEFAULT_FLINTROCK_REPO/Pipfile" pipenv run flintrock --config "$FLINTROCK_CONFIG_PATH" "$@"
