@@ -33,16 +33,18 @@ syntax on
 set noswapfile
 set hidden " Allow switching between unsaved buffers
 syntax sync minlines=10000
-set background=dark
-let g:solarized_termcolors=256
-colorscheme solarized
 set wildignore=*.pyc
-set visualbell
-set noerrorbells
 set colorcolumn=80
 set number
 set hlsearch
 set clipboard^=unnamed " copy to the system clipboard
+
+" Cosmetics
+set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized
+set visualbell
+set noerrorbells
 
 " Mouse
 set mouse=a
