@@ -1,5 +1,3 @@
-let g:python3_host_prog = 'python3'
-
 " Plugins (via plugged)
 call plug#begin('~/.vim/plugged')
 Plug 'tpope/vim-abolish'
@@ -17,11 +15,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
-Plug 'Shougo/deoplete.nvim'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'davidhalter/jedi'
-Plug 'zchee/deoplete-jedi'
 Plug 'nvie/vim-flake8'
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'lervag/vimtex'
@@ -40,16 +33,18 @@ syntax on
 set noswapfile
 set hidden " Allow switching between unsaved buffers
 syntax sync minlines=10000
-set background=dark
-" let g:solarized_termcolors=256
-colorscheme solarized
 set wildignore=*.pyc
-set visualbell
-set noerrorbells
 set colorcolumn=80
 set number
 set hlsearch
 set clipboard^=unnamed " copy to the system clipboard
+
+" Cosmetics
+set background=dark
+let g:solarized_termtrans = 1
+colorscheme solarized
+set visualbell
+set noerrorbells
 
 " Mouse
 set mouse=a
@@ -109,10 +104,6 @@ endif
 let g:ale_pattern_options = {'.*\.tex$': {'ale_enabled': 0}}
 nmap <silent> <leader>W <Plug>(ale_previous_wrap)
 nmap <silent> <leader>w <Plug>(ale_next_wrap)
-
-" Deoplete
-call deoplete#enable()
-let g:jedi#auto_vim_configuration = 1
 
 " JS
 let g:prettier#autoformat = 0

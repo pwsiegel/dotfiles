@@ -1,8 +1,0 @@
-#!/bin/bash
-
-pipenv --venv > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-    pipenv run vim "$@"
-else
-    vim "$@"
-fi

@@ -1,4 +1,0 @@
-#!/bin/bash
-
-export FLINTROCK_CONFIG_PATH="$HOME/.config/flintrock/config.yaml"
-vim "$FLINTROCK_CONFIG_PATH"
