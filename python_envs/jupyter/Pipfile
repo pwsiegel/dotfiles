@@ -11,6 +11,7 @@ bwapi = "*"
 scikit-learn = "*"
 matplotlib = "*"
 pyarrow = "*"
+fastparquet = "*"
 
 [dev-packages]
 
