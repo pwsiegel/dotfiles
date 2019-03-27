@@ -16,8 +16,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'davidhalter/jedi-vim'
-Plug 'PProvost/vim-markdown-jekyll'
-Plug 'lervag/vimtex'
+Plug 'ambv/black'
 Plug 'w0rp/ale'
 Plug 'isruslan/vim-es6'
 Plug 'mxw/vim-jsx'
@@ -25,6 +24,8 @@ Plug 'prettier/vim-prettier', {
 \ 'do': 'yarn install',
 \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue']
 \}
+Plug 'PProvost/vim-markdown-jekyll'
+Plug 'lervag/vimtex'
 call plug#end()
 
 " Basic Settings
@@ -34,7 +35,7 @@ set noswapfile
 set hidden " Allow switching between unsaved buffers
 syntax sync minlines=10000
 set wildignore=*.pyc
-set colorcolumn=80
+set colorcolumn=88
 set number
 set hlsearch
 set clipboard^=unnamed " copy to the system clipboard
@@ -104,6 +105,9 @@ endif
 let g:ale_pattern_options = {'.*\.tex$': {'ale_enabled': 0}}
 nmap <silent> <leader>W <Plug>(ale_previous_wrap)
 nmap <silent> <leader>w <Plug>(ale_next_wrap)
+
+" Black
+autocmd BufWritePre *.py execute ':Black'
 
 " JS
 let g:prettier#autoformat = 0
