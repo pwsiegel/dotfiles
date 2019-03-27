@@ -92,6 +92,7 @@ bindkey "≥" insert-last-word # This allows alt-. to insert the last word of th
 #----------Python----------#
 
 export PIP_REQUIRE_VIRTUALENV=true
+export JUPYTERLAB_DIR="$HOME/.local/share/jupyter_labextensions"
 
 #----------NVM----------#
 
@@ -105,7 +106,8 @@ export FLINTROCK_CONFIG_PATH="$HOME/.config/flintrock/config.yaml"
 
 #----------Spark----------#
 
-export PATH="$PATH:/Users/paul/spark-2.2.0-bin-custom-spark/bin"
+export SPARK_HOME="/Users/paul/spark-2.4.0-bin-custom-spark-2.4.0-hadoop-3.2"
+export PATH="$PATH:$SPARK_HOME/bin"
 
 #----------Defaults----------#
 
