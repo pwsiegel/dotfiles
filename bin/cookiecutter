@@ -1,4 +1,0 @@
-#!/bin/bash
-
-export DEFAULT_COOKIECUTTER_REPO="$HOME/dotfiles/python_envs/cookiecutter"
-PIPENV_PIPFILE="$DEFAULT_COOKIECUTTER_REPO/Pipfile" pipenv run cookiecutter "$@"
