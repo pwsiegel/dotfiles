@@ -102,7 +102,7 @@ alias loadnvm="[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh""  # This loads n
 
 #----------Flintrock----------#
 
-export FLINTROCK_CONFIG_PATH="$HOME/.config/flintrock/config.yaml"
+export FLINTROCK_CONFIG_PATH="$HOME/.config/flintrock/config-chexagon.yaml"
 
 #----------Spark----------#
 
