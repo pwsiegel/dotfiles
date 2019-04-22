@@ -5,14 +5,13 @@ name = "pypi"
 
 [packages]
 pandas = "*"
-jupyter = "*"
+jupyterlab = "*"
 "boto3" = "*"
 bwapi = "*"
 scikit-learn = "*"
 matplotlib = "*"
 pyarrow = "*"
 fastparquet = "*"
-jupyterthemes = "*"
 
 [dev-packages]
 
