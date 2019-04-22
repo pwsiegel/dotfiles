@@ -31,6 +31,7 @@ call plug#end()
 " Basic Settings
 filetype plugin indent on
 syntax on
+set nocompatible
 set noswapfile
 set hidden " Allow switching between unsaved buffers
 syntax sync minlines=10000
@@ -64,8 +65,8 @@ nnoremap <Right> :bn<CR>
 " But ignore when in nerdtree/ctrlsf
 autocmd FileType nerdtree noremap <buffer> <Left> <nop>
 autocmd FileType nerdtree noremap <buffer> <Right> <nop>
-map <up> <nop>
-map <down> <nop>
+noremap <up> <nop>
+noremap <down> <nop>
 
 " Configure airline
 let g:airline#extensions#ale#enabled = 1
@@ -100,6 +101,13 @@ let g:ctrlp_open_multiple_files = 'ij'
 if executable("ag")
     let g:ctrlp_user_command = 'ag %s -l --nocolor --depth 8 -g ""'
 endif
+
+" Supertab / completion
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabContextDefaultCompletionType = "<C-n>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
+set completeopt=longest,menuone
 
 " Ale
 let g:ale_pattern_options = {'.*\.tex$': {'ale_enabled': 0}}
