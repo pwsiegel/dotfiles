@@ -20,10 +20,9 @@ ln -s "$DOTFILES/dev_server/dev-vimrc" "$HOME/.vim/vimrc"
 
 #-----Install the rest-----#
 
-. "$DOTFILES"/dev_server/install_zsh.sh
 . "$DOTFILES"/dev_server/install_pyenv.sh "$python"
 . "$DOTFILES"/dev_server/install_vim.sh
 . "$DOTFILES"/dev_server/install_jupyter.sh
+. "$DOTFILES"/dev_server/install_zsh.sh
 
-echo "To install vim plugins, run the vim command :PlugInstall."
-echo "Please log out and back in for settings to take effect."
+echo "Installation complete; logging out and back in may be necessary"
