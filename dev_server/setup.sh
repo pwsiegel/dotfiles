@@ -17,6 +17,7 @@ if [ $? -ne 0 ]; then
 fi
 
 rm "$HOME/.bashrc"
+mkdir "$HOME/.vim"
 ln -s "$HOME/.dotfiles/dev_server/dev-bashrc" "$HOME/.bashrc"
 ln -s "$HOME/.dotfiles/dev_server/dev-zshrc" "$HOME/.zshrc"
 ln -s "$HOME/.dotfiles/dev_server/dev-vimrc" "$HOME/.vim/vimrc"
