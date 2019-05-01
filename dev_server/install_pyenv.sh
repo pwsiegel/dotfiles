@@ -1,18 +1,17 @@
 #!/usr/bin/env bash
 set -o pipefail
 
-if [ -z ${1+x} ]; then
-    echo "Error: must pass python version to install_python"
-    exit 1
-fi
+python=${1:?Usage: ./install_pyenv.sh <python-version>}
 
 which pyenv > /dev/null 2>&1
 if [ $? -ne 0 ]; then
-    sudo yum install -y gcc gcc-c++ make gitatch openssl-devel zlib-devel readline-devel sqlite-devel bzip2-devel zlib libff-devel
+    sudo yum -y install git gcc zlib-devel bzip2 bzip2-devel readline-devel sqlite sqlite-devel openssl-devel xz xz-devel libffi-devel findutils
 	git clone git://github.com/yyuu/pyenv.git "$HOME/.pyenv"
-    echo 'PATH="$HOME/.pyenv/bin:$PATH"' >> "$HOME/.bashrc"
-    echo 'eval "$(pyenv init -)"' >> "$HOME/.bashrc"
+    
+    set +u
     source "$HOME/.bashrc"
-	pyenv install "$1"
-	pyenv global "$1"
+    set -u
+
+	pyenv install "$python"
+	pyenv global "$python"
 fi
