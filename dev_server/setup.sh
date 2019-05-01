@@ -5,25 +5,18 @@ set -eou pipefail
 
 python=${1:?Usage: ./setup.sh <python-version>}
 
-#-----Clone and symlink dotfiles-----#
+#-----Symlink dotfiles-----#
 
-DOTFILES="$HOME/.dotfiles"
+DOTFILES="$HOME/dotfiles"
 
-which git > /dev/null 2>&1 
-if [ $? -ne 0 ]; then
-    sudo yum update
-    sudo yum install -y git
-    git clone https://github.com/pwsiegel/dotfiles.git "$DOTFILES"
-fi
+rm -f "$HOME/.bashrc"
+rm -f "$HOME/.zshrc"
+mkdir -p "$HOME/.vim"
+rm -f "$HOME/.vim/vimrc"
 
-rm "$HOME/.bashrc" 2> /dev/null
-rm "$HOME/.zshrc" 2> /dev/null
-mkdir "$HOME/.vim"
-rm "$HOME/.vim/vimrc" 2> /dev/null
-
-ln -s "$HOME/.dotfiles/dev_server/dev-bashrc" "$HOME/.bashrc"
-ln -s "$HOME/.dotfiles/dev_server/dev-zshrc" "$HOME/.zshrc"
-ln -s "$HOME/.dotfiles/dev_server/dev-vimrc" "$HOME/.vim/vimrc"
+ln -s "$DOTFILES/dev_server/dev-bashrc" "$HOME/.bashrc"
+ln -s "$DOTFILES/dev_server/dev-zshrc" "$HOME/.zshrc"
+ln -s "$DOTFILES/dev_server/dev-vimrc" "$HOME/.vim/vimrc"
 
 #-----Install the rest-----#
 
