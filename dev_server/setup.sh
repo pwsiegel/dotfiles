@@ -16,8 +16,11 @@ if [ $? -ne 0 ]; then
     git clone https://github.com/pwsiegel/dotfiles.git "$DOTFILES"
 fi
 
-rm "$HOME/.bashrc"
+rm "$HOME/.bashrc" 2> /dev/null
+rm "$HOME/.zshrc" 2> /dev/null
 mkdir "$HOME/.vim"
+rm "$HOME/.vim/vimrc" 2> /dev/null
+
 ln -s "$HOME/.dotfiles/dev_server/dev-bashrc" "$HOME/.bashrc"
 ln -s "$HOME/.dotfiles/dev_server/dev-zshrc" "$HOME/.zshrc"
 ln -s "$HOME/.dotfiles/dev_server/dev-vimrc" "$HOME/.vim/vimrc"
