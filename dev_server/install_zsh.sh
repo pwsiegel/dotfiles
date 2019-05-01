@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -eou pipefail
 
+echo "Installing zsh"
+
 which zsh > /dev/null 2>&1
 if [ $? -ne 0 ]; then
     sudo yum -y install zsh

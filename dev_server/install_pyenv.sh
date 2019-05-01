@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -o pipefail
 
+echo "Installing pyenv"
+
 python=${1:?Usage: ./install_pyenv.sh <python-version>}
 
 which pyenv > /dev/null 2>&1
