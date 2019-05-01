@@ -3,7 +3,6 @@ set -eou pipefail
 
 echo "Installing zsh"
 
-which zsh > /dev/null 2>&1
 if $(which zsh > /dev/null); then
     echo "zsh already installed"
 else
