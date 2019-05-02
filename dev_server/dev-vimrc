@@ -16,7 +16,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'davidhalter/jedi-vim'
-Plug 'ambv/black'
+" Plug 'ambv/black'
 call plug#end()
 
 " Basic Settings
@@ -101,4 +101,4 @@ inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 set completeopt=longest,menuone
 
 " Black
-autocmd BufWritePre *.py execute ':Black'
+" autocmd BufWritePre *.py execute ':Black'
