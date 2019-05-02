@@ -1,6 +1,12 @@
 #!/bin/bash
 set -eou pipefail
 
+#-----TODO-----#
+# Modify /etc/security/limits.conf
+# Clone, make, and install tmux (with libevent dependency)
+# Clone, make, and install vim
+# Pipenv?
+
 #-----Parse command line arguments-----#
 
 python=${1:?Usage: ./setup.sh <python-version>}
