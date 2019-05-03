@@ -4,12 +4,19 @@ if [ -f /etc/bashrc ]; then
     . /etc/bashrc
 fi
 
+#-----Prompt customization-----#
+
 export THEME=$HOME/.bash/themes/agnoster-bash/agnoster.bash
 if [[ -f $THEME ]]; then
     export DEFAULT_USER=`whoami`
-        source $THEME
-    fi
+    source $THEME
+fi
+
+#-----Python-----#
 
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+#-----Other-----#
+
