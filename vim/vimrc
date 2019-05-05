@@ -22,7 +22,7 @@ Plug 'isruslan/vim-es6'
 Plug 'mxw/vim-jsx'
 Plug 'prettier/vim-prettier', {
 \ 'do': 'yarn install',
-\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue']
+\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'html']
 \}
 Plug 'PProvost/vim-markdown-jekyll'
 Plug 'lervag/vimtex'
@@ -62,11 +62,19 @@ set expandtab
 " Map arrow keys to buffer switching
 nnoremap <Left> :bp<CR>
 nnoremap <Right> :bn<CR>
-" But ignore when in nerdtree/ctrlsf
+" But ignore when in nerdtree
 autocmd FileType nerdtree noremap <buffer> <Left> <nop>
 autocmd FileType nerdtree noremap <buffer> <Right> <nop>
+" Disable up/down arrows
 noremap <up> <nop>
 noremap <down> <nop>
+" Disable scrolling in insert mode
+inoremap <ScrollWheelUp> <nop>
+inoremap <S-ScrollWheelUp> <nop>
+inoremap <C-ScrollWheelUp> <nop>
+inoremap <ScrollWheelDown> <nop>
+inoremap <S-ScrollWheelDown> <nop>
+inoremap <C-ScrollWheelDown> <nop>
 
 " Configure airline
 let g:airline#extensions#ale#enabled = 1
@@ -85,8 +93,8 @@ nnoremap <leader>s :source ~/.vim/vimrc<CR>:nohls<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>h :nohls<CR>
 nnoremap <leader>c :bd<CR>
-noremap <C-l> :tabn<CR>
-noremap <C-h> :tabp<CR>
+nnoremap <C-l> :tabn<CR>
+nnoremap <C-h> :tabp<CR>
 set pastetoggle=<leader>p
 
 " Nerdtree
@@ -105,9 +113,11 @@ endif
 " Supertab / completion
 let g:SuperTabDefaultCompletionType = "context"
 let g:SuperTabContextDefaultCompletionType = "<C-n>"
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 set completeopt=longest,menuone
+inoremap <expr> <C-l> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+inoremap <expr> <C-h> pumvisible() ? "\<C-e>" : "\<Esc>"
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 
 " Ale
 let g:ale_pattern_options = {'.*\.tex$': {'ale_enabled': 0}}
@@ -117,7 +127,7 @@ nmap <silent> <leader>w <Plug>(ale_next_wrap)
 " Black
 autocmd BufWritePre *.py execute ':Black'
 
-" JS
+" JS / HTML
 let g:prettier#autoformat = 0
 let g:prettier#quickfix_auto_focus = 0
 let g:prettier#config#tab_width = 4
