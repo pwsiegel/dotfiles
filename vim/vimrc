@@ -95,7 +95,7 @@ nnoremap <leader>h :nohls<CR>
 nnoremap <leader>c :bd<CR>
 nnoremap <C-l> :tabn<CR>
 nnoremap <C-h> :tabp<CR>
-set pastetoggle=<leader>p
+" set pastetoggle=<leader>p
 
 " Nerdtree
 autocmd StdinReadPre * let s:std_in=1
