@@ -9,9 +9,10 @@ jupyterlab = "*"
 "boto3" = "*"
 bwapi = "*"
 scikit-learn = "*"
-matplotlib = "*"
 pyarrow = "*"
 fastparquet = "*"
+pyspark = "*"
+plotly = "*"
 
 [dev-packages]
 
