@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 pandas = "*"
-jupyterlab = "*"
+jupyterlab = "==0.35.6"
 "boto3" = "*"
 bwapi = "*"
 scikit-learn = "*"
@@ -13,6 +13,7 @@ pyarrow = "*"
 fastparquet = "*"
 pyspark = "*"
 plotly = "*"
+networkx = "*"
 
 [dev-packages]
 
