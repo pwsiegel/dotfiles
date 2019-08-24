@@ -35,6 +35,8 @@ set nocompatible
 set noswapfile
 set hidden " Allow switching between unsaved buffers
 syntax sync minlines=10000
+set visualbell
+set t_vb=
 set wildignore=*.pyc
 set colorcolumn=88
 set number
