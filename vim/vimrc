@@ -42,6 +42,7 @@ set colorcolumn=88
 set number
 set hlsearch
 set clipboard^=unnamed " copy to the system clipboard
+set foldmethod=indent
 
 " Cosmetics
 set background=dark
@@ -139,7 +140,7 @@ let g:prettier#config#trailing_comma = 'es5'
 let g:prettier#config#jsx_bracket_same_line = 'false'
 set suffixesadd+=.js
 let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.vue PrettierAsync
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.graphql,*.vue PrettierAsync
 
 " Jekyll / Markdown / Mathjax
 " TODO Figure out how to offload this into a separate file
