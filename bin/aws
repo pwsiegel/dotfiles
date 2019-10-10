@@ -1,4 +1,0 @@
-#!/bin/bash
-
-export DEFAULT_AWS_REPO="$HOME/dotfiles/python_envs/awscli"
-PIPENV_PIPFILE="$DEFAULT_AWS_REPO/Pipfile" pipenv run aws "$@"
