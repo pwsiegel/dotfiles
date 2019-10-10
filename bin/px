@@ -1,3 +1,0 @@
-#!/bin/bash
-
-PIPENV_PIPFILE="$HOME/dotfiles/pipx_env/Pipfile" pipenv run pipx "$@"
