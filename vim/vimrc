@@ -16,6 +16,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'davidhalter/jedi-vim'
+Plug 'nvie/vim-flake8'
 Plug 'ambv/black'
 Plug 'w0rp/ale'
 Plug 'isruslan/vim-es6'
@@ -28,139 +29,11 @@ Plug 'PProvost/vim-markdown-jekyll'
 Plug 'lervag/vimtex'
 call plug#end()
 
-" Basic Settings
-filetype plugin indent on
-syntax on
-set nocompatible
-set noswapfile
-set hidden " Allow switching between unsaved buffers
-syntax sync minlines=10000
-set hlsearch
-set clipboard^=unnamed " copy to the system clipboard
-set foldmethod=indent
-
-" Cosmetics
-set background=dark
-let g:solarized_termtrans = 1
-colorscheme solarized
-set visualbell
-set noerrorbells
-set t_vb=
-set colorcolumn=88
-set number
-
-" Mouse
-set mouse=a
-map <LeftMouse> <nop>
-map <2-LeftMouse> <nop>
-
-" Indentation
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
-set expandtab
-
-" Map arrow keys to buffer switching
-nnoremap <Left> :bp<CR>
-nnoremap <Right> :bn<CR>
-" Disable up/down arrows
-noremap <up> <nop>
-noremap <down> <nop>
-" Disable scrolling in insert mode
-inoremap <ScrollWheelUp> <nop>
-inoremap <S-ScrollWheelUp> <nop>
-inoremap <C-ScrollWheelUp> <nop>
-inoremap <ScrollWheelDown> <nop>
-inoremap <S-ScrollWheelDown> <nop>
-inoremap <C-ScrollWheelDown> <nop>
-
-" Configure airline
-let g:airline#extensions#ale#enabled = 1
-" Install Roboto Light from https://github.com/powerline/fonts
-let g:airline_powerline_fonts = 1
-" Enable the list of buffers
-let g:airline#extensions#tabline#enabled = 1
-" Show just the filename
-let g:airline#extensions#tabline#fnamemod = ':t'
-" Status bar
-let g:airline_theme='luna'
-
-" Mappings
-let mapleader=" "
-nnoremap <leader>s :source ~/.vim/vimrc<CR>:nohls<CR>
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>h :nohls<CR>
-nnoremap <leader>c :bd<CR>
-nnoremap <C-l> :tabn<CR>
-nnoremap <C-h> :tabp<CR>
-
-" Nerdtree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-map <C-n> :NERDTreeToggle<CR>
-let g:NERDTreeQuitOnOpen = 1
-autocmd FileType nerdtree noremap <buffer> <Left> <nop>
-autocmd FileType nerdtree noremap <buffer> <Right> <nop>
-
-" Ctrlp
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|build'
-let g:ctrlp_open_multiple_files = 'ij'
-if executable("ag")
-    let g:ctrlp_user_command = 'ag %s -l --nocolor --depth 8 -g ""'
-endif
-
-" Supertab / completion
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabContextDefaultCompletionType = "<C-n>"
-set completeopt=longest,menuone
-inoremap <expr> <C-l> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-inoremap <expr> <C-h> pumvisible() ? "\<C-e>" : "\<Esc>"
-inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
-
-" Black
-autocmd BufWritePre *.py execute ':Black'
-
-" Ale
-let g:ale_pattern_options = {'.*\.tex$': {'ale_enabled': 0}}
-nmap <silent> <leader>W <Plug>(ale_previous_wrap)
-nmap <silent> <leader>w <Plug>(ale_next_wrap)
-
-" JS / HTML
-let g:prettier#autoformat = 0
-let g:prettier#quickfix_auto_focus = 0
-let g:prettier#config#tab_width = 4
-let g:prettier#config#print_width = 140
-let g:prettier#config#bracket_spacing = 'true'
-let g:prettier#config#trailing_comma = 'es5'
-let g:prettier#config#jsx_bracket_same_line = 'false'
-set suffixesadd+=.js
-let g:jsx_ext_required = 0 " Allow JSX in normal JS files
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.graphql,*.vue PrettierAsync
-
-" Jekyll / Markdown / Mathjax
-" TODO Figure out how to offload this into a separate file
-autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown set filetype=markdown
-
-function! MathAndLiquid()
-    "" Define certain regions
-    " Block math. Look for "$$[anything]$$"
-    syn region math start=/\$\$/ end=/\$\$/
-    " inline math. Look for "$[not $][anything]$"
-    syn match math_block '\$[^$].\{-}\$'
-
-    " Liquid single line. Look for "{%[anything]%}"
-    syn match liquid '{%.*%}'
-    " Liquid multiline. Look for "{%[anything]%}[anything]{%[anything]%}"
-    syn region highlight_block start='{% highlight .*%}' end='{%.*%}'
-    " Fenced code blocks, used in GitHub Flavored Markdown (GFM)
-    syn region highlight_block start='```' end='```'
-
-    "" Actually highlight those regions.
-    hi link math Statement
-    hi link liquid Statement
-    hi link highlight_block Function
-    hi link math_block Function
-endfunction
-
-autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown call MathAndLiquid()
+source %:p:h/basic.vim
+source %:p:h/cosmetics.vim
+source %:p:h/mappings.vim
+source %:p:h/navigation.vim
+source %:p:h/completion.vim
+source %:p:h/python.vim
+source %:p:h/javascript.vim
+source %:p:h/math-blog.vim
