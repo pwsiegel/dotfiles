@@ -35,11 +35,6 @@ set nocompatible
 set noswapfile
 set hidden " Allow switching between unsaved buffers
 syntax sync minlines=10000
-set visualbell
-set t_vb=
-set wildignore=*.pyc
-set colorcolumn=88
-set number
 set hlsearch
 set clipboard^=unnamed " copy to the system clipboard
 set foldmethod=indent
@@ -50,6 +45,9 @@ let g:solarized_termtrans = 1
 colorscheme solarized
 set visualbell
 set noerrorbells
+set t_vb=
+set colorcolumn=88
+set number
 
 " Mouse
 set mouse=a
@@ -65,9 +63,6 @@ set expandtab
 " Map arrow keys to buffer switching
 nnoremap <Left> :bp<CR>
 nnoremap <Right> :bn<CR>
-" But ignore when in nerdtree
-autocmd FileType nerdtree noremap <buffer> <Left> <nop>
-autocmd FileType nerdtree noremap <buffer> <Right> <nop>
 " Disable up/down arrows
 noremap <up> <nop>
 noremap <down> <nop>
@@ -98,13 +93,14 @@ nnoremap <leader>h :nohls<CR>
 nnoremap <leader>c :bd<CR>
 nnoremap <C-l> :tabn<CR>
 nnoremap <C-h> :tabp<CR>
-" set pastetoggle=<leader>p
 
 " Nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeQuitOnOpen = 1
+autocmd FileType nerdtree noremap <buffer> <Left> <nop>
+autocmd FileType nerdtree noremap <buffer> <Right> <nop>
 
 " Ctrlp
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|build'
@@ -122,13 +118,13 @@ inoremap <expr> <C-h> pumvisible() ? "\<C-e>" : "\<Esc>"
 inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " inoremap <expr> <Esc> pumvisible() ? "\<C-e>" : "\<Esc>"
 
+" Black
+autocmd BufWritePre *.py execute ':Black'
+
 " Ale
 let g:ale_pattern_options = {'.*\.tex$': {'ale_enabled': 0}}
 nmap <silent> <leader>W <Plug>(ale_previous_wrap)
 nmap <silent> <leader>w <Plug>(ale_next_wrap)
-
-" Black
-autocmd BufWritePre *.py execute ':Black'
 
 " JS / HTML
 let g:prettier#autoformat = 0
