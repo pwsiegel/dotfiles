@@ -16,8 +16,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'davidhalter/jedi-vim'
-Plug 'nvie/vim-flake8'
-Plug 'ambv/black'
 Plug 'w0rp/ale'
 Plug 'isruslan/vim-es6'
 Plug 'mxw/vim-jsx'
@@ -29,11 +27,12 @@ Plug 'PProvost/vim-markdown-jekyll'
 Plug 'lervag/vimtex'
 call plug#end()
 
-source %:p:h/basic.vim
-source %:p:h/cosmetics.vim
-source %:p:h/mappings.vim
-source %:p:h/navigation.vim
-source %:p:h/completion.vim
-source %:p:h/python.vim
-source %:p:h/javascript.vim
-source %:p:h/math-blog.vim
+source ~/dotfiles/vim/basic.vim
+source ~/dotfiles/vim/cosmetics.vim
+source ~/dotfiles/vim/mappings.vim
+source ~/dotfiles/vim/navigation.vim
+source ~/dotfiles/vim/completion.vim
+source ~/dotfiles/vim/linting.vim
+source ~/dotfiles/vim/python.vim
+source ~/dotfiles/vim/javascript.vim
+source ~/dotfiles/vim/math_blog.vim
