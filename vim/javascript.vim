@@ -1,8 +1,3 @@
-" Ale
-let g:ale_pattern_options = {'.*\.tex$': {'ale_enabled': 0}}
-nmap <silent> <leader>W <Plug>(ale_previous_wrap)
-nmap <silent> <leader>w <Plug>(ale_next_wrap)
-
 " JS / HTML
 let g:prettier#autoformat = 0
 let g:prettier#quickfix_auto_focus = 0
