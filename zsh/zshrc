@@ -68,6 +68,7 @@ source $ZSH/oh-my-zsh.sh
 #----------Aliases and scripts----------#
 
 export PATH="$HOME/.local/bin:$PATH"
+alias groot="cd $(git root)" # Assumes root has been aliased to `rev-parse --show-toplevel` in gitconfig
 
 #----------Prompt customization----------#
 
