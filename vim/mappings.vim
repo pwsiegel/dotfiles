@@ -8,7 +8,7 @@ nnoremap <leader>e :lopen<CR>
 
 " Buffers
 nnoremap <leader>c :bd<CR>
+nnoremap <Left> :bp<CR>
+nnoremap <Right> :bn<CR>
 nnoremap <Up> :wincmd k<CR>
 nnoremap <Down> :wincmd j<CR>
-nnoremap <Left> :wincmd h<CR>
-nnoremap <Right> :wincmd l<CR>
