@@ -1,39 +1,92 @@
 " Plugins (via plugged)
 call plug#begin('~/.vim/plugged')
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-ragtag'
-Plug 'tpope/vim-commentary'
-Plug 'michaeljsmith/vim-indent-object'
-Plug 'airblade/vim-gitgutter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'flazz/vim-colorschemes'
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'ervandew/supertab'
-Plug 'davidhalter/jedi-vim'
-Plug 'w0rp/ale'
-Plug 'isruslan/vim-es6'
-Plug 'mxw/vim-jsx'
-Plug 'prettier/vim-prettier', {
-\ 'do': 'yarn install',
-\ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'html']
-\}
-Plug 'PProvost/vim-markdown-jekyll'
-Plug 'lervag/vimtex'
+    Plug 'tpope/vim-abolish'
+    Plug 'tpope/vim-sensible'
+    Plug 'tpope/vim-fugitive'
+    Plug 'tpope/vim-repeat'
+    Plug 'tpope/vim-unimpaired'
+    Plug 'tpope/vim-surround'
+    Plug 'tpope/vim-ragtag'
+    Plug 'tpope/vim-commentary'
+    Plug 'michaeljsmith/vim-indent-object'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'flazz/vim-colorschemes'
+    Plug 'scrooloose/nerdtree'
+    Plug 'Xuyuanp/nerdtree-git-plugin'
+    Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'ervandew/supertab'
+    Plug 'davidhalter/jedi-vim'
+    Plug 'w0rp/ale'
+    Plug 'isruslan/vim-es6'
+    Plug 'mxw/vim-jsx'
+    Plug 'prettier/vim-prettier', {
+    \ 'do': 'yarn install',
+    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'html']
+    \}
 call plug#end()
 
-source ~/dotfiles/vim/basic.vim
-source ~/dotfiles/vim/cosmetics.vim
+" Basic settings - vim defaults, folding, indentation
+    filetype plugin indent on " Allow filetype plugins
+    syntax on " Enable syntax highlighting
+    set nocompatible " Disable backward compatibility with vi
+    set noswapfile " Don't create swap files when buffers are open
+    set hidden " Allow switching between unsaved buffers
+    syntax sync minlines=10000
+    set hlsearch " Highlight search results
+    set clipboard^=unnamed " copy to the system clipboard
+    set number
+    " Folding - indent, level 1
+        set foldmethod=indent " Fold code along indentation
+        set foldlevelstart=0 " Newly open files open 0 levels of folding
+    " Indentation - all indents, including tab key, are 4 spaces
+        set tabstop=8
+        set shiftwidth=4
+        set softtabstop=0
+        set expandtab
+        set smarttab
+
+" Cosmetics - colors, airline
+    colorscheme solarized
+    set background=dark " https://vi.stackexchange.com/questions/12104/what-does-set-background-dark-do
+    set colorcolumn=88
+    set belloff=all
+    " Configure airline
+        let g:airline#extensions#ale#enabled = 1
+        " Install Roboto Light from https://github.com/powerline/fonts
+        let g:airline_powerline_fonts = 1
+        " Enable the list of buffers
+        let g:airline#extensions#tabline#enabled = 1
+        " Show just the filename
+        let g:airline#extensions#tabline#fnamemod = ':t'
+        " Status bar
+        let g:airline_theme='luna'
+
+" Navigation - Nerdtree, Ctrlp
+    " Nerdtree
+        autocmd StdinReadPre * let s:std_in=1
+        autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+        map <C-n> :NERDTreeToggle<CR>
+        let g:NERDTreeQuitOnOpen = 1
+        autocmd FileType nerdtree noremap <buffer> <Left> <nop>
+        autocmd FileType nerdtree noremap <buffer> <Right> <nop>
+    " Ctrlp
+        let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|build'
+        let g:ctrlp_open_multiple_files = 'ij'
+        if executable("ag")
+            let g:ctrlp_user_command = 'ag %s -l --nocolor --depth 8 -g ""'
+        endif
+
+" IDE features - completion, linting
+    " Completion
+        let g:SuperTabDefaultCompletionType = "context"
+        let g:SuperTabContextDefaultCompletionType = "<C-n>"
+        set completeopt=longest,menuone
+    " Linting
+        let g:ale_pattern_options = {'\.py$': {'ale_linters': ['flake8', 'mypy'], 'ale_fixers': ['black', 'isort']}}
+        let g:ale_fix_on_save = 1
+
 source ~/dotfiles/vim/mappings.vim
-source ~/dotfiles/vim/navigation.vim
-source ~/dotfiles/vim/completion.vim
-source ~/dotfiles/vim/linting.vim
 source ~/dotfiles/vim/javascript.vim
 source ~/dotfiles/vim/math_blog.vim

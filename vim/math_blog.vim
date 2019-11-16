@@ -1,5 +1,4 @@
 " Jekyll / Markdown / Mathjax
-" TODO Figure out how to offload this into a separate file
 autocmd BufRead,BufNewFile,BufEnter *.md,*.markdown set filetype=markdown
 
 function! MathAndLiquid()
