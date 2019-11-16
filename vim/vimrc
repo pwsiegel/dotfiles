@@ -30,10 +30,11 @@ call plug#end()
 " Basic settings - vim defaults, folding, indentation
     filetype plugin indent on " Allow filetype plugins
     syntax on " Enable syntax highlighting
+    syntax sync minlines=10000
     set nocompatible " Disable backward compatibility with vi
     set noswapfile " Don't create swap files when buffers are open
+    set updatetime=50
     set hidden " Allow switching between unsaved buffers
-    syntax sync minlines=10000
     set hlsearch " Highlight search results
     set clipboard^=unnamed " copy to the system clipboard
     set number
@@ -86,6 +87,7 @@ call plug#end()
     " Linting
         let g:ale_pattern_options = {'\.py$': {'ale_linters': ['flake8', 'mypy'], 'ale_fixers': ['black', 'isort']}}
         let g:ale_fix_on_save = 1
+    " Gitgutter
 
 source ~/dotfiles/vim/mappings.vim
 source ~/dotfiles/vim/javascript.vim
