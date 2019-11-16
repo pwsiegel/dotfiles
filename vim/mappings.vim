@@ -26,8 +26,8 @@ nnoremap <leader>e :lopen<CR>
     inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " Linting
-    nmap <silent> <leader>W <Plug>(ale_previous_wrap)
-    nmap <silent> <leader>w <Plug>(ale_next_wrap)
+    nmap <silent> <leader>n <Plug>(ale_next_wrap)
+    nmap <silent> <leader>p <Plug>(ale_previous_wrap)
 
 " Mouse
     set mouse=a
