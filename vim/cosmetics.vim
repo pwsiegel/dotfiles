@@ -1,10 +1,7 @@
 " Cosmetics
-set background=dark
-let g:solarized_termtrans = 1
+set background=dark " https://vi.stackexchange.com/questions/12104/what-does-set-background-dark-do
 colorscheme solarized
-set visualbell
-set noerrorbells
-set t_vb=
+set belloff=all
 set colorcolumn=88
 set number
 
