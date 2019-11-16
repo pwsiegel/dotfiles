@@ -6,7 +6,7 @@ nnoremap <leader>gd :Gdiff<CR>
 nnoremap <leader>h :nohls<CR>
 nnoremap <leader>e :lopen<CR>
 
-" Buffers
+" Buffers / windows
 nnoremap <leader>c :bd<CR>
 nnoremap <Left> :bp<CR>
 nnoremap <Right> :bn<CR>
