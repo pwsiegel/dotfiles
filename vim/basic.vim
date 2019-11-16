@@ -20,12 +20,6 @@ set mouse=a
 map <LeftMouse> <nop>
 map <2-LeftMouse> <nop>
 
-" Map arrow keys to buffer switching
-nnoremap <Left> :bp<CR>
-nnoremap <Right> :bn<CR>
-" Disable up/down arrows
-noremap <up> <nop>
-noremap <down> <nop>
 " Disable scrolling in insert mode
 inoremap <ScrollWheelUp> <nop>
 inoremap <S-ScrollWheelUp> <nop>
