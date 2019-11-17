@@ -81,7 +81,7 @@ call plug#end()
             let g:ctrlp_user_command = 'ag %s -l --nocolor --depth 8 -g ""'
         endif
 
-" IDE features - completion, linting
+" IDE features - completion, linting, snippets
     " Completion
         let g:SuperTabDefaultCompletionType = "context"
         let g:SuperTabContextDefaultCompletionType = "<C-n>"
@@ -89,6 +89,9 @@ call plug#end()
     " Linting
         let g:ale_pattern_options = {'\.py$': {'ale_linters': ['flake8', 'mypy'], 'ale_fixers': ['black', 'isort']}}
         let g:ale_fix_on_save = 1
+    " Snippets
+        let g:UltiSnipsJumpForwardTrigger = "<right>"
+        let g:UltiSnipsJumpBackwardTrigger = "<left>"
 
 source ~/dotfiles/vim/mappings.vim
 source ~/dotfiles/vim/javascript.vim
