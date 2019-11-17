@@ -90,8 +90,10 @@ call plug#end()
         let g:ale_pattern_options = {'\.py$': {'ale_linters': ['flake8', 'mypy'], 'ale_fixers': ['black', 'isort']}}
         let g:ale_fix_on_save = 1
     " Snippets
-        let g:UltiSnipsJumpForwardTrigger = "<right>"
-        let g:UltiSnipsJumpBackwardTrigger = "<left>"
+        " let g:UltiSnipsJumpForwardTrigger = "<right>"
+        " let g:UltiSnipsJumpBackwardTrigger = "<left>"
+        let g:UltiSnipsJumpForwardTrigger = ">"
+        let g:UltiSnipsJumpBackwardTrigger = "<"
 
 source ~/dotfiles/vim/mappings.vim
 source ~/dotfiles/vim/javascript.vim
