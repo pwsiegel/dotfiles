@@ -4,7 +4,7 @@ snippet eqn "Equation environment" b
 \end{$1}
 endsnippet
 
-snippet eqnline "Equation environment in math mode" b
+snippet matheqn "Equation environment in math mode" b
 $$
 	\begin{${1:Type}}
 		$0
@@ -26,13 +26,13 @@ snippet frac "Latex fraction" i
 \frac{$1}{$2}$0
 endsnippet
 
-snippet thm "Theorem" b
+snippet theorem "Theorem" b
 <div class="theorem">
 $0
 </div>
 endsnippet
 
-snippet thmtext "Theorem with text" b
+snippet theorem+ "Theorem with text" b
 <div class="theorem" text="${1:Text}">
 $0
 </div>
@@ -44,7 +44,7 @@ $0
 </div>
 endsnippet
 
-snippet proptext "Proposition with text" b
+snippet prop+ "Proposition with text" b
 <div class="proposition" text="${1:Text}">
 $0
 </div>
@@ -56,7 +56,7 @@ $0
 </div>
 endsnippet
 
-snippet lemmatext "Lemma with text" b
+snippet lemma+ "Lemma with text" b
 <div class="lemma" text="${1:Text}">
 $0
 </div>
@@ -68,7 +68,7 @@ $0
 </div>
 endsnippet
 
-snippet conjtext "Conjecture with text" b
+snippet conj+ "Conjecture with text" b
 <div class="conjecture" text="${1:Text}">
 $0
 </div>
@@ -80,19 +80,19 @@ $0
 </div>
 endsnippet
 
-snippet defntext "Definition with text" b
+snippet defn+ "Definition with text" b
 <div class="definition" text="${1:Text}">
 $0
 </div>
 endsnippet
 
-snippet rmk "Remark" b
+snippet remark "Remark" b
 <div class="remark">
 $0
 </div>
 endsnippet
 
-snippet rmktext "Remark with text" b
+snippet remark+ "Remark with text" b
 <div class="remark" text="${1:Text}">
 $0
 </div>
@@ -104,7 +104,7 @@ $0
 </div>
 endsnippet
 
-snippet egtext "Example with text" b
+snippet eg+ "Example with text" b
 <div class="example" text="${1:Text}">
 $0
 </div>
@@ -116,37 +116,37 @@ $0
 </div>
 endsnippet
 
-snippet extext "Exercise with text" b
+snippet ex+ "Exercise with text" b
 <div class="exercise" text="${1:Text}">
 $0
 </div>
 endsnippet
 
-snippet prf "Proof" b
+snippet proof "Proof" b
 <div class="proof">
 $0
 </div>
 endsnippet
 
-snippet prftext "Proof with text" b
+snippet proof+ "Proof with text" b
 <div class="proof" text="${1:Text}">
 $0
 </div>
 endsnippet
 
-snippet sol "Solution" b
+snippet soln "Solution" b
 <div class="solution">
 $0
 </div>
 endsnippet
 
-snippet soltext "Solution with text" b
+snippet soln+ "Solution with text" b
 <div class="solution" text="${1:Text}">
 $0
 </div>
 endsnippet
 
-snippet solhide "Hidden solution" b
+snippet solnhide "Hidden solution" b
 <details>
 <div class="solution">
 $0
