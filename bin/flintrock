@@ -1,0 +1,3 @@
+#!/bin/bash
+
+flintrock --config "$FLINTROCK_CONFIG_PATH" "$@"
