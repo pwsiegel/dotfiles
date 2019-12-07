@@ -8,6 +8,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-surround'
     Plug 'tpope/vim-ragtag'
     Plug 'tpope/vim-commentary'
+    Plug 'vimwiki/vimwiki'
+    Plug 'tbabej/taskwiki'
     Plug 'michaeljsmith/vim-indent-object'
     Plug 'airblade/vim-gitgutter'
     Plug 'vim-airline/vim-airline'
@@ -94,6 +96,9 @@ call plug#end()
         " let g:UltiSnipsJumpBackwardTrigger = "<left>"
         let g:UltiSnipsJumpForwardTrigger = ">"
         let g:UltiSnipsJumpBackwardTrigger = "<"
+
+" Vimwiki
+    let g:vimwiki_list = [{'path': '~/notes/paul-work/vimwiki'}]
 
 source ~/dotfiles/vim/mappings.vim
 source ~/dotfiles/vim/javascript.vim
