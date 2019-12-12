@@ -90,6 +90,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 export PIP_REQUIRE_VIRTUALENV=true
 export JUPYTERLAB_DIR="$HOME/.local/share/jupyter_labextensions"
+export PYTHONBREAKPOINT="pudb.set_trace"
 
 #----------NVM----------#
 
