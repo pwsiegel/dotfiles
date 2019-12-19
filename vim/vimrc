@@ -1,34 +1,34 @@
 " Plugins (via plugged)
 call plug#begin('~/.vim/plugged')
-    Plug 'tpope/vim-abolish'
-    Plug 'tpope/vim-sensible'
-    Plug 'tpope/vim-fugitive'
-    Plug 'tpope/vim-repeat'
-    Plug 'tpope/vim-unimpaired'
-    Plug 'tpope/vim-surround'
-    Plug 'tpope/vim-ragtag'
-    Plug 'tpope/vim-commentary'
-    Plug 'vimwiki/vimwiki'
-    Plug 'tbabej/taskwiki'
-    Plug 'michaeljsmith/vim-indent-object'
-    Plug 'airblade/vim-gitgutter'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'flazz/vim-colorschemes'
-    Plug 'scrooloose/nerdtree'
-    Plug 'Xuyuanp/nerdtree-git-plugin'
-    Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'SirVer/ultisnips'
-    Plug 'honza/vim-snippets'
-    Plug 'ervandew/supertab'
-    Plug 'davidhalter/jedi-vim'
-    Plug 'w0rp/ale'
-    Plug 'isruslan/vim-es6'
-    Plug 'mxw/vim-jsx'
+    Plug 'tpope/vim-sensible' " Sensible vim defaults
+    Plug 'tpope/vim-abolish' " Handles word variations, e.g. converting between snake case and camel case
+    Plug 'tpope/vim-fugitive' " Git integration for vim
+    Plug 'tpope/vim-repeat' " Remaps . so that it repeats maps properly, rather than just the last native command
+    Plug 'tpope/vim-unimpaired' " Various handy mappings, e.g. [<space> adds newlines above and [e swaps with line above
+    Plug 'tpope/vim-surround' " Motions for adding / removing / changing surrounding brackets / quotes
+    Plug 'tpope/vim-ragtag' " Editing HTML-style tags
+    Plug 'tpope/vim-commentary' " Adds gcc to comment a line, or gc motion to comment multiple lines
+    Plug 'vimwiki/vimwiki' " Vim-powered wiki mode
+    Plug 'tbabej/taskwiki' " Integration between vimwiki and taskwarrior
+    Plug 'michaeljsmith/vim-indent-object' " Creates text objects from indented blocks
+    Plug 'airblade/vim-gitgutter' " Adds git status indicators to gutter, and staging commands
+    Plug 'vim-airline/vim-airline' " Vim status bar
+    Plug 'vim-airline/vim-airline-themes' " Themes for vim-airline
+    Plug 'flazz/vim-colorschemes' " Color schemes for vim
+    Plug 'scrooloose/nerdtree' " File tree navigation UI
+    Plug 'Xuyuanp/nerdtree-git-plugin' " Adds git status indicators to nerdtree
+    Plug 'ctrlpvim/ctrlp.vim' " Easy file navigation with <C-p>
+    Plug 'SirVer/ultisnips' " Supports custom completion from trigger string to code snippet
+    Plug 'honza/vim-snippets' " Library of language-specific defaults for ultisnips
+    Plug 'ervandew/supertab' " Tab completion
+    Plug 'davidhalter/jedi-vim' " Python autocompletion / goto def / rename / etc.
+    Plug 'w0rp/ale' " Asynchronous Linting Engine - supports many languages
+    Plug 'isruslan/vim-es6' " Vim support for Javascript ES6 standard
+    Plug 'mxw/vim-jsx' " Vim support for JSX syntax (React)
     Plug 'prettier/vim-prettier', {
     \ 'do': 'yarn install',
     \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'html']
-    \}
+    \} " Automatic syntax checker / fixer for Javascript
 call plug#end()
 
 " Basic settings - vim defaults, folding, indentation
