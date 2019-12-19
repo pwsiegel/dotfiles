@@ -25,9 +25,9 @@ nnoremap <leader>e :lopen<CR>
     inoremap <expr> <C-h> pumvisible() ? "\<C-e>" : "\<Esc>"
     inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
-" Linting
-    nmap <silent> <leader>n <Plug>(ale_next_wrap)
-    nmap <silent> <leader>p <Plug>(ale_previous_wrap)
+" ALE
+    nmap <silent> <C-j> <Plug>(ale_next_wrap)
+    nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 
 " Mouse
     set mouse=a
