@@ -12,8 +12,10 @@ nnoremap <leader>e :lopen<CR>
     nnoremap <leader>c :bd<CR>
     nnoremap <Left> :bp<CR>
     nnoremap <Right> :bn<CR>
-    nnoremap <Up> :wincmd k<CR>
-    nnoremap <Down> :wincmd j<CR>
+    nnoremap <leader>k :wincmd k<CR>
+    nnoremap <leader>j :wincmd j<CR>
+    nmap <leader>q <Plug>(qf_qf_toggle)
+    nmap <leader>l <Plug>(qf_loc_toggle)
 
 " Folding
     nnoremap <leader><space> zA
