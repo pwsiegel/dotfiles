@@ -8,21 +8,21 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-surround' " Motions for adding / removing / changing surrounding brackets / quotes
     Plug 'tpope/vim-ragtag' " Editing HTML-style tags
     Plug 'tpope/vim-commentary' " Adds gcc to comment a line, or gc motion to comment multiple lines
-    Plug 'vimwiki/vimwiki' " Vim-powered wiki mode
-    Plug 'tbabej/taskwiki' " Integration between vimwiki and taskwarrior
-    Plug 'michaeljsmith/vim-indent-object' " Creates text objects from indented blocks
-    Plug 'airblade/vim-gitgutter' " Adds git status indicators to gutter, and staging commands
+    Plug 'flazz/vim-colorschemes' " Color schemes for vim
     Plug 'vim-airline/vim-airline' " Vim status bar
     Plug 'vim-airline/vim-airline-themes' " Themes for vim-airline
-    Plug 'flazz/vim-colorschemes' " Color schemes for vim
+    Plug 'vimwiki/vimwiki' " Vim-powered wiki mode
+    Plug 'tbabej/taskwiki' " Integration between vimwiki and taskwarrior
+    Plug 'ctrlpvim/ctrlp.vim' " Easy file navigation with <C-p>
     Plug 'scrooloose/nerdtree' " File tree navigation UI
     Plug 'Xuyuanp/nerdtree-git-plugin' " Adds git status indicators to nerdtree
-    Plug 'ctrlpvim/ctrlp.vim' " Easy file navigation with <C-p>
+    Plug 'airblade/vim-gitgutter' " Adds git status indicators to gutter, and staging commands
     Plug 'SirVer/ultisnips' " Supports custom completion from trigger string to code snippet
     Plug 'honza/vim-snippets' " Library of language-specific defaults for ultisnips
     Plug 'ervandew/supertab' " Tab completion
-    Plug 'davidhalter/jedi-vim' " Python autocompletion / goto def / rename / etc.
+    Plug 'michaeljsmith/vim-indent-object' " Creates text objects from indented blocks
     Plug 'w0rp/ale' " Asynchronous Linting Engine - supports many languages
+    Plug 'davidhalter/jedi-vim' " Python autocompletion / goto def / rename / etc.
     Plug 'isruslan/vim-es6' " Vim support for Javascript ES6 standard
     Plug 'mxw/vim-jsx' " Vim support for JSX syntax (React)
     Plug 'prettier/vim-prettier', {
