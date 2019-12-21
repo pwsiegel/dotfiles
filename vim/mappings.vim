@@ -14,8 +14,8 @@ nnoremap <leader>/ :nohls<CR>
     nnoremap <Right> :bn<CR>
     nnoremap <leader>k :wincmd k<CR>
     nnoremap <leader>j :wincmd j<CR>
-    nmap <leader>q <Plug>(qf_qf_toggle)
-    nmap <leader>l <Plug>(qf_loc_toggle)
+    nnoremap <leader>q <Plug>(qf_qf_toggle)
+    nnoremap <leader>l <Plug>(qf_loc_toggle)
 
 " Folding
     nnoremap <leader><space> zA
@@ -28,8 +28,8 @@ nnoremap <leader>/ :nohls<CR>
     inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " ALE
-    nmap <silent> <C-j> <Plug>(ale_next_wrap)
-    nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+    nnoremap <silent> <C-j> <Plug>(ale_next_wrap)
+    nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
 
 " Mouse
     set mouse=a
