@@ -43,7 +43,7 @@ call plug#end()
     set hlsearch " Highlight search results
     set clipboard^=unnamed " copy to the system clipboard
     set number
-    " Folding - indent, level 1
+    " Folding - indent, level 0
         set foldmethod=indent " Fold code along indentation
         set foldlevelstart=0 " Newly open files open 0 levels of folding
     " Indentation - all indents, including tab key, are 4 spaces
@@ -97,6 +97,7 @@ call plug#end()
 
 " Vimwiki
     let g:vimwiki_list = [{'path': '~/notes/paul-work/vimwiki'}]
+    let g:vimwiki_table_mappings = 0 " Frees up <tab> for completing snippets
 
 source ~/dotfiles/vim/mappings.vim
 source ~/dotfiles/vim/javascript.vim
