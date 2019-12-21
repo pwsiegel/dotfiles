@@ -2,7 +2,6 @@
 let mapleader=" "
 nnoremap <leader>s :source ~/.vim/vimrc<CR>:nohls<CR>
 nnoremap <leader>h :nohls<CR>
-nnoremap <leader>e :lopen<CR>
 
 " Git
     nnoremap <leader>gs :Gstatus<CR>
