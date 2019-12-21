@@ -43,9 +43,3 @@ nnoremap <leader>/ :nohls<CR>
     inoremap <ScrollWheelDown> <nop>
     inoremap <S-ScrollWheelDown> <nop>
     inoremap <C-ScrollWheelDown> <nop>
-
-" Unmap a few unimpaired commands so that `=` isn't slow
-nunmap =p
-nunmap =P
-nunmap =op
-nunmap =o
