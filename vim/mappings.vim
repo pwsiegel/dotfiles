@@ -1,7 +1,7 @@
 " Custom mappings
 let mapleader=" "
 nnoremap <leader>s :source ~/.vim/vimrc<CR>:nohls<CR>
-nnoremap <leader>h :nohls<CR>
+nnoremap <leader>/ :nohls<CR>
 
 " Git
     nnoremap <leader>gs :Gstatus<CR>
@@ -43,3 +43,9 @@ nnoremap <leader>h :nohls<CR>
     inoremap <ScrollWheelDown> <nop>
     inoremap <S-ScrollWheelDown> <nop>
     inoremap <C-ScrollWheelDown> <nop>
+
+" Unmap a few unimpaired commands so that `=` isn't slow
+nunmap =p
+nunmap =P
+nunmap =op
+nunmap =o
