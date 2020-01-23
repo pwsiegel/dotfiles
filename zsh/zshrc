@@ -104,7 +104,8 @@ export FLINTROCK_CONFIG_PATH="$HOME/.config/flintrock/config-chexagon.yaml"
 
 #----------Spark----------#
 
-export SPARK_HOME="/Users/paul/spark-2.4.0-bin-custom-spark-2.4.0-hadoop-3.2"
+export SPARK_HOME="/Users/paul/spark-2.4.4"
+# export SPARK_HOME="/Users/paul/spark-2.4.0-bin-custom-spark-2.4.0-hadoop-3.2"
 export PATH="$PATH:$SPARK_HOME/bin"
 
 #----------Defaults----------#
