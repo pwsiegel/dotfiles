@@ -96,8 +96,11 @@ call plug#end()
         let g:UltiSnipsJumpBackwardTrigger = "<"
 
 " Vimwiki
-    let g:vimwiki_list = [{'path': '~/notes/paul-work/vimwiki'}]
+    let g:vimwiki_list = [
+        \{'path': '~/notes/paul-work/vimwiki', 'syntax': 'markdown', 'ext': '.md'}
+    \]
     let g:vimwiki_table_mappings = 0 " Frees up <tab> for completing snippets
+    let g:taskwiki_markup_syntax = "markdown"
 
 source ~/dotfiles/vim/mappings.vim
 source ~/dotfiles/vim/javascript.vim
