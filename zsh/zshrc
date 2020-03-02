@@ -61,7 +61,7 @@ HYPHEN_INSENSITIVE="true"
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
-plugins=(pyenv web-search fasd fzf)
+plugins=(pyenv web-search fasd fzf docker)
 
 source $ZSH/oh-my-zsh.sh
 
