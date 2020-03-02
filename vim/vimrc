@@ -97,10 +97,13 @@ call plug#end()
 
 " Vimwiki
     let g:vimwiki_list = [
-        \{'path': '~/notes/paul-work/vimwiki', 'syntax': 'markdown', 'ext': '.md'}
+        \{'path': '~/notes/paul-work/vimwiki', 'syntax': 'markdown', 'ext': '.md'},
+        \{'path': '~/pwsiegel/pwsiegel.github.io/_posts', 'syntax': 'markdown', 'ext': '.md'}
     \]
     let g:vimwiki_table_mappings = 0 " Frees up <tab> for completing snippets
     let g:taskwiki_markup_syntax = "markdown"
+    let g:taskwiki_disable_concealcursor = "true"
+    let g:vimwiki_global_ext = 0
 
 source ~/dotfiles/vim/mappings.vim
 source ~/dotfiles/vim/javascript.vim
