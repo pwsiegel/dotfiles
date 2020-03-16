@@ -1,7 +1,9 @@
-" Custom mappings
-let mapleader=" "
-nnoremap <leader>s :source ~/.vim/vimrc<CR>:nohls<CR>
-nnoremap <leader>/ :nohls<CR>
+" General
+    let mapleader=" "
+    nnoremap <leader>s :source ~/.vim/vimrc<CR>:nohls<CR>
+    nnoremap <leader>/ :nohls<CR>
+    nnoremap <leader>j <C-d>zz
+    nnoremap <leader>k <C-u>zz
 
 " Git
     nnoremap <leader>gs :Gstatus<CR>
@@ -12,8 +14,8 @@ nnoremap <leader>/ :nohls<CR>
     nnoremap <leader>c :bd<CR>
     nnoremap <Left> :bp<CR>
     nnoremap <Right> :bn<CR>
-    nnoremap <leader>k :wincmd k<CR>
-    nnoremap <leader>j :wincmd j<CR>
+    nnoremap <leader>K :wincmd k<CR>
+    nnoremap <leader>J :wincmd j<CR>
     nnoremap <leader>q <Plug>(qf_qf_toggle)
     nnoremap <leader>l <Plug>(qf_loc_toggle)
 
@@ -37,9 +39,9 @@ nnoremap <leader>/ :nohls<CR>
     map <2-LeftMouse> <nop>
 
 " Disable scrolling in insert mode
-    inoremap <ScrollWheelUp> <nop>
-    inoremap <S-ScrollWheelUp> <nop>
-    inoremap <C-ScrollWheelUp> <nop>
-    inoremap <ScrollWheelDown> <nop>
-    inoremap <S-ScrollWheelDown> <nop>
-    inoremap <C-ScrollWheelDown> <nop>
+    noremap <ScrollWheelUp> <nop>
+    noremap <S-ScrollWheelUp> <nop>
+    noremap <C-ScrollWheelUp> <nop>
+    noremap <ScrollWheelDown> <nop>
+    noremap <S-ScrollWheelDown> <nop>
+    noremap <C-ScrollWheelDown> <nop>
