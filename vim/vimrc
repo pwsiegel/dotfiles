@@ -59,7 +59,9 @@ call plug#end()
     set background=dark " https://vi.stackexchange.com/questions/12104/what-does-set-background-dark-do
     set colorcolumn=88
     set belloff=all
-    " Configure airline
+    " Gitgutter cosmetics
+        highlight! link SignColumn LineNr
+    " Airline
         let g:airline#extensions#ale#enabled = 1
         " Install Roboto Light from https://github.com/powerline/fonts
         let g:airline_powerline_fonts = 1
