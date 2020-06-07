@@ -14,7 +14,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'vimwiki/vimwiki' " Vim-powered wiki mode
     Plug 'tbabej/taskwiki' " Integration between vimwiki and taskwarrior
     Plug 'ctrlpvim/ctrlp.vim' " Easy file navigation with <C-p>
-    Plug 'romainl/vim-qf' " Mappings for quickfix / location list menu
     Plug 'scrooloose/nerdtree' " File tree navigation UI
     Plug 'Xuyuanp/nerdtree-git-plugin' " Adds git status indicators to nerdtree
     Plug 'airblade/vim-gitgutter' " Adds git status indicators to gutter, and staging commands
