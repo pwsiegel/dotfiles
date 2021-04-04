@@ -105,7 +105,7 @@ call plug#end()
 
 " Vimwiki
     let g:vimwiki_list = [
-        \{'path': '~/notes/paul-work/vimwiki', 'syntax': 'markdown', 'ext': '.md'},
+        \{'path': '~/bw/paul-work/vimwiki', 'syntax': 'markdown', 'ext': '.md'},
         \{'path': '~/pwsiegel/pwsiegel.github.io/_posts', 'syntax': 'markdown', 'ext': '.md'}
     \]
     let g:vimwiki_table_mappings = 0 " Frees up <tab> for completing snippets
