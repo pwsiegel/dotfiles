@@ -16,8 +16,6 @@
     nnoremap <Right> :bn<CR>
     nnoremap <leader>K :wincmd k<CR>
     nnoremap <leader>J :wincmd j<CR>
-    nnoremap <leader>q <Plug>(qf_qf_toggle)
-    nnoremap <leader>l <Plug>(qf_loc_toggle)
 
 " Folding
     nnoremap <leader><space> zA
@@ -25,8 +23,6 @@
     nnoremap <leader>f zM
 
 " Completion
-    inoremap <expr> <C-l> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-    inoremap <expr> <C-h> pumvisible() ? "\<C-e>" : "\<Esc>"
     inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
 " ALE

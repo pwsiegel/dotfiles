@@ -12,9 +12,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline' " Vim status bar
     Plug 'vim-airline/vim-airline-themes' " Themes for vim-airline
     Plug 'vimwiki/vimwiki' " Vim-powered wiki mode
-    Plug 'tbabej/taskwiki' " Integration between vimwiki and taskwarrior
+    " Plug 'tbabej/taskwiki' " Integration between vimwiki and taskwarrior
     Plug 'ctrlpvim/ctrlp.vim' " Easy file navigation with <C-p>
-    Plug 'romainl/vim-qf' " Mappings for quickfix / location list menu
     Plug 'scrooloose/nerdtree' " File tree navigation UI
     Plug 'Xuyuanp/nerdtree-git-plugin' " Adds git status indicators to nerdtree
     Plug 'airblade/vim-gitgutter' " Adds git status indicators to gutter, and staging commands
@@ -59,7 +58,9 @@ call plug#end()
     set background=dark " https://vi.stackexchange.com/questions/12104/what-does-set-background-dark-do
     set colorcolumn=88
     set belloff=all
-    " Configure airline
+    " Gitgutter cosmetics
+        highlight! link SignColumn LineNr
+    " Airline
         let g:airline#extensions#ale#enabled = 1
         " Install Roboto Light from https://github.com/powerline/fonts
         let g:airline_powerline_fonts = 1
@@ -104,13 +105,13 @@ call plug#end()
 
 " Vimwiki
     let g:vimwiki_list = [
-        \{'path': '~/notes/paul-work/vimwiki', 'syntax': 'markdown', 'ext': '.md'},
+        \{'path': '~/bw/paul-work/vimwiki', 'syntax': 'markdown', 'ext': '.md'},
         \{'path': '~/pwsiegel/pwsiegel.github.io/_posts', 'syntax': 'markdown', 'ext': '.md'}
     \]
     let g:vimwiki_table_mappings = 0 " Frees up <tab> for completing snippets
     let g:vimwiki_global_ext = 0
-    let g:taskwiki_markup_syntax = 'markdown'
-    let g:taskwiki_disable_concealcursor = 'true'
+    " let g:taskwiki_markup_syntax = 'markdown'
+    " let g:taskwiki_disable_concealcursor = 'true'
 
 source ~/dotfiles/vim/mappings.vim
 source ~/dotfiles/vim/javascript.vim
