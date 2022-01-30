@@ -6,7 +6,7 @@
     nnoremap <leader>k <C-u>zz
 
 " Git
-    nnoremap <leader>gs :Gstatus<CR>
+    nnoremap <leader>gs :Git<CR>
     nnoremap <leader>gd :Gdiff<CR>
     nnoremap <leader>gp :Gpush<CR>
 
