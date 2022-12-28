@@ -41,7 +41,7 @@ call plug#end()
     set updatetime=50
     set hidden " Allow switching between unsaved buffers
     set hlsearch " Highlight search results
-    set clipboard^=unnamed " copy to the system clipboard
+    set clipboard=unnamedplus " copy to the system clipboard
     set number
     " Folding - indent, level 0
         set foldmethod=indent " Fold code along indentation
