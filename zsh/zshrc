@@ -82,6 +82,11 @@ ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&' # Fixes behavior involving autocomplete and p
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 # bindkey "≥" insert-last-word # This allows alt-. to insert the last word of the last command (i.e. !$)
 
+#----------CUDA----------#
+
+export PATH=/usr/local/cuda-11.5/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda-11.5/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+
 #----------fzf----------#
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -97,15 +102,6 @@ export PYTHONBREAKPOINT="pudb.set_trace"
 export NVM_DIR="$HOME/.nvm"
 alias loadnvm="[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh""  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-#----------Flintrock----------#
-
-export FLINTROCK_CONFIG_PATH="$HOME/.config/flintrock/config-chexagon.yaml"
-
-#----------Spark----------#
-
-export SPARK_HOME="/Users/paul/spark-2.4.5"
-export PATH="$PATH:$SPARK_HOME/bin"
 
 #----------Defaults----------#
 

@@ -22,6 +22,12 @@
     nnoremap <leader>o zR
     nnoremap <leader>f zM
 
+" Vimwiki
+    map <leader>td <Plug>VimwikiToggleListItem
+    map <leader>rtd <Plug>VimwikiRemoveSingleCB
+    map <leader>+ <Plug>VimwikiIncrementListItem
+    map <leader>- <Plug>VimwikiDecrementListItem
+
 " Completion
     inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
@@ -30,7 +36,7 @@
     nnoremap <silent> <C-k> <Plug>(ale_previous_wrap)
 
 " Mouse
-    set mouse=a
+    set mouse=
     map <LeftMouse> <nop>
     map <2-LeftMouse> <nop>
 

@@ -35,6 +35,7 @@ call plug#end()
     filetype plugin indent on " Allow filetype plugins
     syntax on " Enable syntax highlighting
     syntax sync minlines=10000
+    " set textwidth=88 " Set limit for line length
     set nocompatible " Disable backward compatibility with vi
     set noswapfile " Don't create swap files when buffers are open
     set updatetime=50
