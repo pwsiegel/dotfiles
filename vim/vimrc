@@ -8,6 +8,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-surround' " Motions for adding / removing / changing surrounding brackets / quotes
     Plug 'tpope/vim-ragtag' " Editing HTML-style tags
     Plug 'tpope/vim-commentary' " Adds gcc to comment a line, or gc motion to comment multiple lines
+    Plug 'arnar/vim-matchopen' " Highlights unclosed parentheses
     Plug 'flazz/vim-colorschemes' " Color schemes for vim
     Plug 'vim-airline/vim-airline' " Vim status bar
     Plug 'vim-airline/vim-airline-themes' " Themes for vim-airline
@@ -18,7 +19,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Xuyuanp/nerdtree-git-plugin' " Adds git status indicators to nerdtree
     Plug 'airblade/vim-gitgutter' " Adds git status indicators to gutter, and staging commands
     Plug 'SirVer/ultisnips' " Supports custom completion from trigger string to code snippet
-    Plug 'honza/vim-snippets' " Library of language-specific defaults for ultisnips
+    " Plug 'honza/vim-snippets' " Library of language-specific defaults for ultisnips
     Plug 'ervandew/supertab' " Tab completion
     Plug 'michaeljsmith/vim-indent-object' " Creates text objects from indented blocks
     Plug 'w0rp/ale' " Asynchronous Linting Engine - supports many languages

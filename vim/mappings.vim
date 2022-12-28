@@ -8,7 +8,7 @@
 " Git
     nnoremap <leader>gs :Git<CR>
     nnoremap <leader>gd :Gdiff<CR>
-    nnoremap <leader>gp :Gpush<CR>
+    nnoremap <leader>gp :Git push<CR>
 
 " Buffers / windows
     nnoremap <leader>c :bd<CR>
