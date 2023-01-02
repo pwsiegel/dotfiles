@@ -109,5 +109,4 @@ call plug#end()
     " let g:taskwiki_disable_concealcursor = 'true'
 
 source ~/dotfiles/vim/mappings.vim
-source ~/dotfiles/vim/javascript.vim
 source ~/dotfiles/vim/math_blog.vim

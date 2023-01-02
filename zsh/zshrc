@@ -76,6 +76,7 @@ PS1="$PS1"$'\n'" ➜  "
 
 #----------Shell configuration----------#
 
+eval "$(/opt/homebrew/bin/brew shellenv)" # Set PATH, MANPATH, etc., for Homebrew.
 export KEYTIMEOUT=1 # Fixes problem with vi-mode reverse search
 bindkey -v  # Vi mode for the shell
 ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&' # Fixes behavior involving autocomplete and pipes
