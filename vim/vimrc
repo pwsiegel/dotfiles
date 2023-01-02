@@ -13,7 +13,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline' " Vim status bar
     Plug 'vim-airline/vim-airline-themes' " Themes for vim-airline
     Plug 'vimwiki/vimwiki' " Vim-powered wiki mode
-    " Plug 'tbabej/taskwiki' " Integration between vimwiki and taskwarrior
     Plug 'ctrlpvim/ctrlp.vim' " Easy file navigation with <C-p>
     Plug 'scrooloose/nerdtree' " File tree navigation UI
     Plug 'Xuyuanp/nerdtree-git-plugin' " Adds git status indicators to nerdtree
@@ -24,12 +23,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'michaeljsmith/vim-indent-object' " Creates text objects from indented blocks
     Plug 'w0rp/ale' " Asynchronous Linting Engine - supports many languages
     Plug 'davidhalter/jedi-vim' " Python autocompletion / goto def / rename / etc.
-    Plug 'isruslan/vim-es6' " Vim support for Javascript ES6 standard
-    Plug 'mxw/vim-jsx' " Vim support for JSX syntax (React)
-    Plug 'prettier/vim-prettier', {
-    \ 'do': 'yarn install',
-    \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'vue', 'html']
-    \} " Automatic syntax checker / fixer for Javascript
 call plug#end()
 
 " Basic settings - vim defaults, folding, indentation
