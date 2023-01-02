@@ -12,13 +12,8 @@ eggs/
 .pyenv/
 .mypy_cache/
 
-# Scala #
-
 # OSX #
 .DS_Store*
-
-# Intellij #
-.idea/
 
 # Vim #
 *.swp
