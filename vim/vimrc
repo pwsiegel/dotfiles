@@ -18,7 +18,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'Xuyuanp/nerdtree-git-plugin' " Adds git status indicators to nerdtree
     Plug 'airblade/vim-gitgutter' " Adds git status indicators to gutter, and staging commands
     Plug 'SirVer/ultisnips' " Supports custom completion from trigger string to code snippet
-    " Plug 'honza/vim-snippets' " Library of language-specific defaults for ultisnips
+    Plug 'honza/vim-snippets' " Library of language-specific defaults for ultisnips
     Plug 'ervandew/supertab' " Tab completion
     Plug 'michaeljsmith/vim-indent-object' " Creates text objects from indented blocks
     Plug 'w0rp/ale' " Asynchronous Linting Engine - supports many languages
@@ -103,10 +103,8 @@ call plug#end()
         \{'path': '~/bw/paul-work/vimwiki', 'syntax': 'markdown', 'ext': '.md'},
         \{'path': '~/pwsiegel/pwsiegel.github.io/_posts', 'syntax': 'markdown', 'ext': '.md'}
     \]
-    let g:vimwiki_table_mappings = 0 " Frees up <tab> for completing snippets
+    let g:vimwiki_key_mappings = {'table_mappings': 0} " Frees up <tab> for completing snippets
     let g:vimwiki_global_ext = 0
-    " let g:taskwiki_markup_syntax = 'markdown'
-    " let g:taskwiki_disable_concealcursor = 'true'
 
 source ~/dotfiles/vim/mappings.vim
 source ~/dotfiles/vim/math_blog.vim
