@@ -1,3 +1,3 @@
 #!/bin/bash
 
-vim -c 'norm 2 ww'
+vim -c 'norm 1 ww'
