@@ -100,7 +100,6 @@ call plug#end()
         let g:UltiSnipsSnippetDirectories=["UltiSnips", "custom_snippets"]
 " Vimwiki
     let g:vimwiki_list = [
-        \{'path': '~/bw/paul-work/vimwiki', 'syntax': 'markdown', 'ext': '.md'},
         \{'path': '~/pwsiegel/pwsiegel.github.io/_posts', 'syntax': 'markdown', 'ext': '.md'}
     \]
     let g:vimwiki_key_mappings = {'table_mappings': 0} " Frees up <tab> for completing snippets
