@@ -76,7 +76,7 @@ PS1="$PS1"$'\n'" ➜  "
 
 #----------Shell configuration----------#
 
-eval "$(/opt/homebrew/bin/brew shellenv)" # Set PATH, MANPATH, etc., for Homebrew.
+# eval "$(/opt/homebrew/bin/brew shellenv)" # Set PATH, MANPATH, etc., for Homebrew.
 export KEYTIMEOUT=1 # Fixes problem with vi-mode reverse search
 bindkey -v  # Vi mode for the shell
 ZLE_REMOVE_SUFFIX_CHARS=$' \t\n;&' # Fixes behavior involving autocomplete and pipes
@@ -106,11 +106,13 @@ alias loadnvm="[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh""  # This loads n
 
 #----------AWS----------#
 
-export AWS_CREDENTIALS_FILE="$HOME/.aws/credentials"
-export AWS_DEFAULT_PROFILE="default"
-export AWS_ACCESS_KEY_ID=$(grep "$AWS_DEFAULT_PROFILE" "$AWS_CREDENTIALS_FILE" -A 3 | tail -3 | head -1 | awk '{print $NF}' | cut -d "=" -f2-)
-export AWS_SECRET_ACCESS_KEY=$(grep "$AWS_DEFAULT_PROFILE" "$AWS_CREDENTIALS_FILE" -A 3 | tail -2 | head -1 | awk '{print $NF}' | cut -d "=" -f2-)
-export AWS_SESSION_TOKEN=$(grep "$AWS_DEFAULT_PROFILE" "$AWS_CREDENTIALS_FILE" -A 3 | tail -1 | head -1 | awk '{print $NF}' | cut -d "=" -f2-)
+if test -f "$HOME/.aws/credentials"; then
+    export AWS_CREDENTIALS_FILE="$HOME/.aws/credentials"
+    export AWS_DEFAULT_PROFILE="default"
+    export AWS_ACCESS_KEY_ID=$(grep "$AWS_DEFAULT_PROFILE" "$AWS_CREDENTIALS_FILE" -A 3 | tail -3 | head -1 | awk '{print $NF}' | cut -d "=" -f2-)
+    export AWS_SECRET_ACCESS_KEY=$(grep "$AWS_DEFAULT_PROFILE" "$AWS_CREDENTIALS_FILE" -A 3 | tail -2 | head -1 | awk '{print $NF}' | cut -d "=" -f2-)
+    export AWS_SESSION_TOKEN=$(grep "$AWS_DEFAULT_PROFILE" "$AWS_CREDENTIALS_FILE" -A 3 | tail -1 | head -1 | awk '{print $NF}' | cut -d "=" -f2-)
+fi
 
 #----------Defaults----------#
 
