@@ -8,7 +8,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-surround' " Motions for adding / removing / changing surrounding brackets / quotes
     Plug 'tpope/vim-ragtag' " Editing HTML-style tags
     Plug 'tpope/vim-commentary' " Adds gcc to comment a line, or gc motion to comment multiple lines
-    Plug 'arnar/vim-matchopen' " Highlights unclosed parentheses
+    Plug 'jiangmiao/auto-pairs' " IDE-style handling for brackets
     Plug 'flazz/vim-colorschemes' " Color schemes for vim
     Plug 'vim-airline/vim-airline' " Vim status bar
     Plug 'vim-airline/vim-airline-themes' " Themes for vim-airline
@@ -20,9 +20,9 @@ call plug#begin('~/.vim/plugged')
     Plug 'SirVer/ultisnips' " Supports custom completion from trigger string to code snippet
     Plug 'honza/vim-snippets' " Library of language-specific defaults for ultisnips
     Plug 'ervandew/supertab' " Tab completion
-    Plug 'michaeljsmith/vim-indent-object' " Creates text objects from indented blocks
     Plug 'w0rp/ale' " Asynchronous Linting Engine - supports many languages
     Plug 'davidhalter/jedi-vim' " Python autocompletion / goto def / rename / etc.
+    Plug 'sheerun/vim-polyglot'
 call plug#end()
 
 " Basic settings - vim defaults, folding, indentation
@@ -41,12 +41,13 @@ call plug#end()
         set foldmethod=indent " Fold code along indentation
         set foldlevelstart=0 " Newly open files open 0 levels of folding
         set foldopen-=block " Vim motions like } will not open folds
-    " Indentation - all indents, including tab key, are 4 spaces
-        set tabstop=8
-        set shiftwidth=4
-        set softtabstop=0
-        set expandtab
-        set smarttab
+    " Indentation
+        set expandtab       " Use spaces instead of tabs
+        set tabstop=4       " A tab displays as 4 spaces
+        set shiftwidth=4    " Indentation and autoindent use 4 spaces
+        set softtabstop=4   " Pressing Tab inserts 4 spaces
+        set autoindent      " Copy the indentation from the previous line
+        set smarttab        " Make tabbing smarter at the beginning of lines
 
 " Cosmetics - colors, airline
     colorscheme solarized
