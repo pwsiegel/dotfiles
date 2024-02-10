@@ -1,9 +1,10 @@
 " General
     let mapleader=" "
-    nnoremap <leader>s :source ~/.vim/vimrc<CR>:nohls<CR>
+    nnoremap <leader>r :source ~/.vim/vimrc<CR>:nohls<CR>
     nnoremap <leader>/ :nohls<CR>
     nnoremap <leader>j <C-d>zz
     nnoremap <leader>k <C-u>zz
+    nnoremap <leader>o :FZF<CR>
 
 " Git
     nnoremap <leader>gs :Git<CR>
@@ -19,7 +20,7 @@
 
 " Folding
     nnoremap <leader><space> zA
-    nnoremap <leader>o zR
+    nnoremap <leader>a zR
     nnoremap <leader>f zM
 
 " Vimwiki

@@ -13,7 +13,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline' " Vim status bar
     Plug 'vim-airline/vim-airline-themes' " Themes for vim-airline
     Plug 'vimwiki/vimwiki' " Vim-powered wiki mode
-    Plug 'ctrlpvim/ctrlp.vim' " Easy file navigation with <C-p>
+    Plug 'junegunn/fzf' " Easy file navigation with fzf
     Plug 'scrooloose/nerdtree' " File tree navigation UI
     Plug 'Xuyuanp/nerdtree-git-plugin' " Adds git status indicators to nerdtree
     Plug 'airblade/vim-gitgutter' " Adds git status indicators to gutter, and staging commands
@@ -22,7 +22,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'ervandew/supertab' " Tab completion
     Plug 'w0rp/ale' " Asynchronous Linting Engine - supports many languages
     Plug 'davidhalter/jedi-vim' " Python autocompletion / goto def / rename / etc.
-    Plug 'sheerun/vim-polyglot'
+    Plug 'sheerun/vim-polyglot' " Better language support for all sorts of languages
 call plug#end()
 
 " Basic settings - vim defaults, folding, indentation
@@ -37,9 +37,9 @@ call plug#end()
     set hlsearch " Highlight search results
     set clipboard=unnamed " copy to the system clipboard
     set number
-    " Folding - indent, level 0
+    " Folding
         set foldmethod=indent " Fold code along indentation
-        set foldlevelstart=0 " Newly open files open 0 levels of folding
+        set foldlevelstart=99 " Levels of folding in newly opened files
         set foldopen-=block " Vim motions like } will not open folds
     " Indentation
         set expandtab       " Use spaces instead of tabs
@@ -52,7 +52,7 @@ call plug#end()
 " Cosmetics - colors, airline
     colorscheme solarized
     set background=dark " https://vi.stackexchange.com/questions/12104/what-does-set-background-dark-do
-    set colorcolumn=88
+    set colorcolumn=120
     set belloff=all
     " Gitgutter cosmetics
         highlight! link SignColumn LineNr
