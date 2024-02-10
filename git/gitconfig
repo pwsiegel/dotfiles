@@ -1,0 +1,7 @@
+[core]
+    excludesfile = /Users/paul/dotfiles/git/gitignore_global
+[user]
+	name = Paul Siegel
+	email = pwsiegel@gmail.com
+[alias]
+    root = rev-parse --show-toplevel
