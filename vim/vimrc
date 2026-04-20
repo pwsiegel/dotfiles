@@ -1,4 +1,5 @@
 " Plugins (via plugged)
+let g:polyglot_disabled = ['markdown'] " Must be set before plug#begin; use tpope/vim-markdown instead
 call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-sensible' " Sensible vim defaults
     Plug 'tpope/vim-abolish' " Handles word variations, e.g. converting between snake case and camel case
@@ -8,6 +9,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-surround' " Motions for adding / removing / changing surrounding brackets / quotes
     Plug 'tpope/vim-ragtag' " Editing HTML-style tags
     Plug 'tpope/vim-commentary' " Adds gcc to comment a line, or gc motion to comment multiple lines
+    Plug 'tpope/vim-markdown' " Markdown syntax (replaces polyglot's buggy markdown handling)
     Plug 'jiangmiao/auto-pairs' " IDE-style handling for brackets
     Plug 'flazz/vim-colorschemes' " Color schemes for vim
     Plug 'vim-airline/vim-airline' " Vim status bar
