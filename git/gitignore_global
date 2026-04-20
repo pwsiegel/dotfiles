@@ -2,6 +2,7 @@
 # git config --global core.excludesfile path/to/this/file
 
 # Python #
+scratch.ipynb
 __pycache__/
 eggs/
 .eggs/

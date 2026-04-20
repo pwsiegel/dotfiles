@@ -1,7 +1,13 @@
 [core]
     excludesfile = /Users/paul/dotfiles/git/gitignore_global
+    sshCommand = ssh -i /Users/paul/.ssh/pwsiegel-github
+[includeIf "gitdir:/Users/paul/path/to/work/dir/"]
+    [core]
+        sshcommand = ssh -i /Users/paul/.ssh/work-private-key
 [user]
 	name = Paul Siegel
 	email = pwsiegel@gmail.com
 [alias]
     root = rev-parse --show-toplevel
+[pager]
+	branch = false
