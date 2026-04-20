@@ -8,9 +8,11 @@ fi
 # CLI tools installed via brew:
 #   fzf        - fuzzy finder
 #   fd         - fast file finder (find replacement)
-#   pyenv      - Python version management
-#   uv         - Python package/project management
+#   uv         - Python version/package/project management
 #   powerlevel10k - zsh prompt theme
+
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/Users/paul/.local/bin:$PATH"
 
 #----------Standard Oh my ZSH settings----------#
 
@@ -82,8 +84,6 @@ source $ZSH/oh-my-zsh.sh
 
 #----------Aliases and scripts----------#
 #
-export PATH="/Users/paul/.local/bin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH" # Adds homebrew-install stuff to the PATH - specific to Apple silicon
 alias groot='cd $(git root)' # Assumes root has been aliased to `rev-parse --show-toplevel` in gitconfig
 
 #----------Prompt customization----------#
