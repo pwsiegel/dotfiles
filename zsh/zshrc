@@ -8,6 +8,7 @@ fi
 # CLI tools installed via brew:
 #   fzf        - fuzzy finder
 #   fd         - fast file finder (find replacement)
+#   eza        - modern ls replacement (icons, git, per-extension colors)
 #   uv         - Python version/package/project management
 #   powerlevel10k - zsh prompt theme
 
@@ -86,6 +87,13 @@ source $ZSH/oh-my-zsh.sh
 #
 alias groot='cd $(git root)' # Assumes root has been aliased to `rev-parse --show-toplevel` in gitconfig
 alias vim=nvim               # `\vim` or `command vim` if you genuinely need classic vim
+
+# eza replaces BSD ls. Icons need a Nerd Font in iTerm; --git annotates files
+# with their working-tree state.
+alias ls='eza --icons=auto --group-directories-first'
+alias ll='eza -l  --icons=auto --group-directories-first --git'
+alias la='eza -la --icons=auto --group-directories-first --git'
+alias lt='eza --tree --level=2 --icons=auto --group-directories-first'
 
 #----------Prompt customization----------#
 

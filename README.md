@@ -25,7 +25,7 @@ Assumes macOS with Command Line Tools installed (`xcode-select --install`).
 
 brew install \
     neovim tree-sitter-cli \
-    fzf fd \
+    fzf fd eza \
     uv \
     tmux \
     git \
