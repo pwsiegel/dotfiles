@@ -12,7 +12,6 @@ intended audience is future me on a new laptop.
 | `zsh/zshrc` | Shell config (oh-my-zsh + powerlevel10k + vi-mode + fzf integration). |
 | `tmux/tmux.conf` | Tmux config (C-a prefix, powerline theme, mouse on, tpm). |
 | `git/` | `gitconfig` + global `gitignore`. |
-| `bin/` | Small personal scripts (`aws-creds`). |
 
 ## Setup on a new machine
 
@@ -52,23 +51,18 @@ git clone git@github.com:pwsiegel/dotfiles.git ~/dotfiles
 ### 4. Link configs into place
 
 ```sh
-ln -sfn ~/dotfiles/zsh/zshrc       ~/.zshrc
-ln -sfn ~/dotfiles/tmux/tmux.conf  ~/.tmux.conf
-ln -sfn ~/dotfiles/git/gitconfig   ~/.gitconfig
-ln -sfn ~/dotfiles/vim/vimrc       ~/.vim/vimrc          # legacy, optional
-mkdir -p ~/.config
-ln -sfn ~/dotfiles/nvim            ~/.config/nvim
+ln -sfn ~/dotfiles/zsh/zshrc          ~/.zshrc
+ln -sfn ~/dotfiles/tmux/tmux.conf     ~/.tmux.conf
+ln -sfn ~/dotfiles/git/gitconfig      ~/.gitconfig
+ln -sfn ~/dotfiles/vim/vimrc          ~/.vim/vimrc          # legacy, optional
+mkdir -p ~/.config/git
+ln -sfn ~/dotfiles/nvim               ~/.config/nvim
+ln -sfn ~/dotfiles/git/gitignore_global ~/.config/git/ignore  # git reads this by default (XDG)
 ```
 
-For the `bin/` scripts to be on `$PATH`, symlink them into `~/.local/bin`
-(which `zshrc` already adds to `$PATH`):
-
-```sh
-mkdir -p ~/.local/bin
-for f in ~/dotfiles/bin/*; do
-    ln -sfn "$f" ~/.local/bin/"$(basename "$f")"
-done
-```
+On a work machine where `~/.gitconfig` is kept separate (different identity,
+custom aliases), skip the `gitconfig` link above but keep the `~/.config/git/ignore`
+one — git reads it regardless of what your `.gitconfig` says.
 
 ### 5. Tmux plugins
 

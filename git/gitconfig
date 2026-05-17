@@ -1,9 +1,8 @@
-[core]
-    excludesfile = /Users/paul/dotfiles/git/gitignore_global
 [user]
-	name = Paul Siegel
-	email = pwsiegel@gmail.com
+    name = Paul Siegel
+    email = pwsiegel@gmail.com
 [alias]
     root = rev-parse --show-toplevel
+    scrub = clean -fdx -e .env -e .venv -e .claude/
 [pager]
-	branch = false
+    branch = false
