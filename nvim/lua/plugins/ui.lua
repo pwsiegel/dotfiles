@@ -1,11 +1,11 @@
 return {
     {
-        "folke/tokyonight.nvim",
+        "lifepillar/vim-solarized8",
         lazy = false,
         priority = 1000,
         config = function()
-            require("tokyonight").setup({ style = "storm" })
-            vim.cmd.colorscheme("tokyonight")
+            vim.o.background = "dark"
+            vim.cmd.colorscheme("solarized8")
             -- Match the old "SignColumn linked to LineNr" cosmetic so the
             -- gitsigns column blends with the number column.
             local function link_signcol()
@@ -20,13 +20,15 @@ return {
         event = "VeryLazy",
         opts = {
             options = {
-                theme = "tokyonight",
+                theme = "solarized_dark",
                 icons_enabled = false,
-                section_separators = "",
-                component_separators = "|",
+                -- Powerline chevrons (U+E0B0–E0B3) by explicit UTF-8 escape so
+                -- the literal glyphs survive transit through tooling.
+                section_separators   = { left = "\238\130\176", right = "\238\130\178" },
+                component_separators = { left = "\238\130\177", right = "\238\130\179" },
             },
             tabline = {
-                lualine_a = { { "buffers", show_filename_only = false, mode = 0 } },
+                lualine_a = { { "buffers", show_filename_only = true, mode = 0 } },
             },
         },
     },
