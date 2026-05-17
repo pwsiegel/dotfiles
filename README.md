@@ -12,7 +12,7 @@ intended audience is future me on a new laptop.
 | `zsh/zshrc` | Shell config (oh-my-zsh + powerlevel10k + vi-mode + fzf integration). |
 | `tmux/tmux.conf` | Tmux config (C-a prefix, powerline theme, mouse on, tpm). |
 | `git/` | `gitconfig` + global `gitignore`. |
-| `bin/` | Small personal scripts (`aws-creds`, `blog`, `vimwiki`). |
+| `bin/` | Small personal scripts (`aws-creds`). |
 
 ## Setup on a new machine
 

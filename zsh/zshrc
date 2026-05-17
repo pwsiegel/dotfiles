@@ -75,7 +75,7 @@ HYPHEN_INSENSITIVE="true"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-export VISUAL=vim
+export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 plugins=(web-search fzf)
@@ -105,7 +105,7 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 _fd_exclude="--exclude .git --exclude node_modules --exclude .venv --exclude __pycache__ --exclude .cache --exclude .npm --exclude .nvm --exclude .pyenv --exclude .vim --exclude .vscode --exclude .claude --exclude Library --exclude .Trash --exclude Applications --exclude Movies --exclude Music --exclude Pictures"
 z() { local dir=$(fd --type d --hidden ${=_fd_exclude} . ~ 2>/dev/null | fzf --query="$1"); [ -n "$dir" ] && cd "$dir"; }
-v() { local file=$(fd --type f --hidden ${=_fd_exclude} . ~ 2>/dev/null | fzf --query="$1"); [ -n "$file" ] && vim "$file"; }
+v() { local file=$(fd --type f --hidden ${=_fd_exclude} . ~ 2>/dev/null | fzf --query="$1"); [ -n "$file" ] && nvim "$file"; }
 
 #----------Python----------#
 

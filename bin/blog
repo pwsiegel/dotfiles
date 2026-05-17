@@ -1,3 +1,0 @@
-#!/bin/bash
-
-vim -c 'norm 1 ww'
