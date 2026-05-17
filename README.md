@@ -12,6 +12,7 @@ intended audience is future me on a new laptop.
 | `zsh/zshrc` | Shell config (oh-my-zsh + powerlevel10k + vi-mode + fzf integration). |
 | `tmux/tmux.conf` | Tmux config (C-a prefix, powerline theme, mouse on, tpm). |
 | `git/` | `gitconfig` + global `gitignore`. |
+| `claude/` | Claude Code user-level skills (e.g. `/initiative` for structured multi-phase workflow). |
 
 ## Setup on a new machine
 
@@ -58,6 +59,8 @@ ln -sfn ~/dotfiles/vim/vimrc          ~/.vim/vimrc          # legacy, optional
 mkdir -p ~/.config/git
 ln -sfn ~/dotfiles/nvim               ~/.config/nvim
 ln -sfn ~/dotfiles/git/gitignore_global ~/.config/git/ignore  # git reads this by default (XDG)
+mkdir -p ~/.claude/skills
+ln -sfn ~/dotfiles/claude/skills/initiative ~/.claude/skills/initiative   # /initiative skill
 ```
 
 On a work machine where `~/.gitconfig` is kept separate (different identity,
