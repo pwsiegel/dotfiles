@@ -17,9 +17,32 @@ return {
         "tpope/vim-fugitive",
         cmd = { "Git", "Gdiff", "Gdiffsplit", "Gvdiffsplit", "Gread", "Gwrite" },
         keys = {
-            { "<leader>gs", "<cmd>Git<cr>",          desc = "Git status" },
-            { "<leader>gd", "<cmd>Gdiffsplit<cr>",   desc = "Git diff" },
-            { "<leader>gp", "<cmd>Git push<cr>",     desc = "Git push" },
+            -- Toggle: <leader>gs opens fugitive status, or closes it if already open.
+            {
+                "<leader>gs",
+                function()
+                    for _, win in ipairs(vim.api.nvim_list_wins()) do
+                        local buf = vim.api.nvim_win_get_buf(win)
+                        if vim.bo[buf].filetype == "fugitive" then
+                            vim.api.nvim_win_close(win, false)
+                            return
+                        end
+                    end
+                    vim.cmd("Git")
+                end,
+                desc = "Toggle git status",
+            },
+        },
+    },
+    {
+        "sindrets/diffview.nvim",
+        cmd = { "DiffviewOpen", "DiffviewClose", "DiffviewToggleFiles", "DiffviewFileHistory" },
+        keys = {
+            { "<leader>gv", "<cmd>DiffviewOpen<cr>",  desc = "Open diff view" },
+            { "<leader>gV", "<cmd>DiffviewClose<cr>", desc = "Close diff view" },
+        },
+        opts = {
+            use_icons = false, -- no nerd font installed
         },
     },
 }
