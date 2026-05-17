@@ -13,8 +13,10 @@ map("n", "<leader>k", "<C-u>zz")
 map("n", "<leader>c", ":bd<CR>")
 map("n", "<Left>",   ":bp<CR>", { silent = true })
 map("n", "<Right>",  ":bn<CR>", { silent = true })
-map("n", "<leader>K", "<C-w>k")
-map("n", "<leader>J", "<C-w>j")
+-- Window cycling (works from terminal mode too, so it pops you out of the
+-- Claude split without the <C-\><C-n> dance).
+map({ "n", "t" }, "<leader>w", "<cmd>wincmd w<cr>", { desc = "Cycle next window" })
+map({ "n", "t" }, "<leader>W", "<cmd>wincmd W<cr>", { desc = "Cycle prev window" })
 
 -- Force vim navigation: arrows do nothing.
 -- (Left/Right in normal mode are reused above for buffer nav.)
