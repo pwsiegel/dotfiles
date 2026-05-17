@@ -21,11 +21,7 @@ map("n", "<leader><space>", "zA")
 map("n", "<leader>a", "zR")
 map("n", "<leader>f", "zM")
 
--- Insert-mode <CR>: accept popup item if visible, else newline w/ undo break.
--- (Will be superseded by the completion plugin.)
-map("i", "<CR>", function()
-    return vim.fn.pumvisible() == 1 and "<C-y>" or "<C-g>u<CR>"
-end, { expr = true })
+-- (<CR> popup-aware accept is handled by blink.cmp's "enter" preset.)
 
 -- Mouse / scrollwheel fully disabled
 local modes = { "n", "v", "i" }
