@@ -27,8 +27,8 @@ map("i",          "<Right>", "<nop>")
 
 -- Folding
 map("n", "<leader><space>", "zA")
-map("n", "<leader>a", "zR")
-map("n", "<leader>f", "zM")
+map("n", "<leader>fo",      "zR")
+map("n", "<leader>fc",      "zM")
 
 -- (<CR> popup-aware accept is handled by blink.cmp's "enter" preset.)
 
