@@ -85,6 +85,7 @@ source $ZSH/oh-my-zsh.sh
 #----------Aliases and scripts----------#
 #
 alias groot='cd $(git root)' # Assumes root has been aliased to `rev-parse --show-toplevel` in gitconfig
+alias vim=nvim               # `\vim` or `command vim` if you genuinely need classic vim
 
 #----------Prompt customization----------#
 
