@@ -13,6 +13,7 @@ intended audience is future me on a new laptop.
 | `tmux/tmux.conf` | Tmux config (C-a prefix, powerline theme, mouse on, tpm). |
 | `git/` | `gitconfig` + global `gitignore`. |
 | `claude/` | Claude Code user-level skills (e.g. `/initiative` for structured multi-phase workflow). |
+| `iterm/` | iTerm color presets (`.itermcolors` files). Imported per-machine into the iTerm prefs plist; see the per-machine state section below. |
 
 ## Setup on a new machine
 
@@ -127,7 +128,7 @@ above:
 |---|---|---|
 | GitHub SSH key | `~/.ssh/id_ed25519` | Generate with `ssh-keygen -t ed25519 -C pwsiegel@gmail.com`, then add the public key at https://github.com/settings/keys. Required before the `git clone` step works. |
 | iTerm font | iTerm prefs (`com.googlecode.iterm2.plist`) | `Preferences → Profiles → Text → Font` → `JetBrainsMono Nerd Font`. |
-| iTerm color scheme | iTerm prefs | `Preferences → Profiles → Colors → Color Presets...` — Solarized Dark pairs with the nvim solarized8 theme. |
+| iTerm color scheme | iTerm prefs | Import `iterm/*.itermcolors` (`open iterm/*.itermcolors` registers them as Color Presets), then `Preferences → Profiles → Colors → Color Presets...` → pick `Solarized Dark Green fg`. Pairs with the nvim solarized8 theme. |
 | Powerlevel10k config | `~/.p10k.zsh` | Runs a wizard on first shell launch (sourced by `zshrc`). Re-run any time with `p10k configure`. |
 | Tmux plugins | `~/.tmux/plugins/` | Install tpm (step 5 above), then `<C-a> I` inside tmux. |
 | Nvim plugins | `~/.local/share/nvim/lazy/` | lazy.nvim self-installs on first `nvim` launch. |
