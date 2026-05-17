@@ -16,8 +16,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Plugin specs live in lua/plugins/*.lua and get added in step 2.
 require("lazy").setup({
-    spec = {},
+    spec = { { import = "plugins" } },
     change_detection = { notify = false },
 })
