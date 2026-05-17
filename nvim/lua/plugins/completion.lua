@@ -25,7 +25,10 @@ return {
                 ["<Tab>"]     = { "select_next", "snippet_forward",  "fallback" },
                 ["<S-Tab>"]   = { "select_prev", "snippet_backward", "fallback" },
                 ["<CR>"]      = { "accept",      "fallback" },
-                ["<Esc>"]     = { "hide",        "fallback" },
+                ["<Esc>"]     = {
+                    function(cmp) if cmp.is_visible() then cmp.hide() end return false end,
+                    "fallback",
+                },
                 ["<C-Space>"] = { "show",        "show_documentation", "hide_documentation" },
                 ["<C-y>"]     = { "accept" },
             },
