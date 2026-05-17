@@ -52,11 +52,7 @@ return {
                 end,
             })
 
-            -- Diagnostic nav (replaces ALE's <C-j>/<C-k>).
-            vim.keymap.set("n", "<C-j>", function() vim.diagnostic.jump({ count = 1 }) end,
-                { desc = "Next diagnostic" })
-            vim.keymap.set("n", "<C-k>", function() vim.diagnostic.jump({ count = -1 }) end,
-                { desc = "Prev diagnostic" })
+            -- Diagnostic nav: use ]d / [d from mini.bracketed (built in).
         end,
     },
 }

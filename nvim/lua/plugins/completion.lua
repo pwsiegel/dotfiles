@@ -13,8 +13,22 @@ return {
         version = "*",
         dependencies = { "L3MON4D3/LuaSnip", "rafamadriz/friendly-snippets" },
         opts = {
-            -- `enter` adds <CR> = accept-if-popup-else-fallback on top of default.
-            keymap = { preset = "enter" },
+            -- Custom keymap matching:
+            --   <Tab>     cycle next  (or jump snippet, or insert tab)
+            --   <S-Tab>   cycle prev  (or jump back, or unindent)
+            --   <CR>      accept the highlighted item
+            --   <Esc>     dismiss the menu (without exiting insert mode)
+            -- The chained array form tries each command in order; if a command
+            -- returns false (e.g. menu not visible) it falls through to the next.
+            keymap = {
+                preset = "none",
+                ["<Tab>"]     = { "select_next", "snippet_forward",  "fallback" },
+                ["<S-Tab>"]   = { "select_prev", "snippet_backward", "fallback" },
+                ["<CR>"]      = { "accept",      "fallback" },
+                ["<Esc>"]     = { "hide",        "fallback" },
+                ["<C-Space>"] = { "show",        "show_documentation", "hide_documentation" },
+                ["<C-y>"]     = { "accept" },
+            },
             sources = {
                 default = { "lsp", "path", "snippets", "buffer" },
             },

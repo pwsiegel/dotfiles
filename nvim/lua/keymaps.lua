@@ -16,6 +16,15 @@ map("n", "<Right>",  ":bn<CR>", { silent = true })
 map("n", "<leader>K", "<C-w>k")
 map("n", "<leader>J", "<C-w>j")
 
+-- Force vim navigation: arrows do nothing.
+-- (Left/Right in normal mode are reused above for buffer nav.)
+map({ "n", "v" }, "<Up>",    "<nop>")
+map({ "n", "v" }, "<Down>",  "<nop>")
+map("i",          "<Up>",    "<nop>")
+map("i",          "<Down>",  "<nop>")
+map("i",          "<Left>",  "<nop>")
+map("i",          "<Right>", "<nop>")
+
 -- Folding
 map("n", "<leader><space>", "zA")
 map("n", "<leader>a", "zR")
