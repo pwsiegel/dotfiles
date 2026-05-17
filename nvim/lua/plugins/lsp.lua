@@ -27,6 +27,17 @@ return {
                 },
             })
 
+            -- Pyright ignores pythonPath sent via LSP settings; only pyrightconfig.json on disk is reliable. Auto-write one when a project has .venv but no config yet.
+            vim.lsp.config("pyright", {
+                before_init = function(_, config)
+                    local root = config.root_dir or vim.fn.getcwd()
+                    local cfg = root .. "/pyrightconfig.json"
+                    if vim.fn.isdirectory(root .. "/.venv") == 1 and vim.fn.filereadable(cfg) == 0 then
+                        vim.fn.writefile({ '{ "venvPath": ".", "venv": ".venv", "reportPrivateImportUsage": "none" }' }, cfg)
+                    end
+                end,
+            })
+
             -- Diagnostic UI.
             vim.diagnostic.config({
                 virtual_text = { spacing = 4, prefix = "●" },

@@ -12,6 +12,7 @@ eggs/
 .python-version
 .pyenv/
 .mypy_cache/
+pyrightconfig.json
 
 # OSX #
 .DS_Store*
