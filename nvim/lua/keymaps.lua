@@ -10,7 +10,7 @@ map("n", "<leader>j", "<C-d>zz")
 map("n", "<leader>k", "<C-u>zz")
 
 -- Buffers / windows
-map("n", "<leader>c", ":bd<CR>")
+map("n", "<leader>x", ":bd<CR>")
 map("n", "<Left>",   ":bp<CR>", { silent = true })
 map("n", "<Right>",  ":bn<CR>", { silent = true })
 -- Window cycling (works from terminal mode too, so it pops you out of the
@@ -33,6 +33,16 @@ map("n", "<leader>fo",      "zR")
 map("n", "<leader>fc",      "zM")
 
 -- (<CR> popup-aware accept is handled by blink.cmp's "enter" preset.)
+
+-- Mark the startup [No Name] buffer to wipe itself the moment it's hidden,
+-- so opening any real file makes it vanish.
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        if vim.fn.argc() == 0 and vim.api.nvim_buf_get_name(0) == "" and vim.bo.buftype == "" then
+            vim.bo.bufhidden = "wipe"
+        end
+    end,
+})
 
 -- Mouse / scrollwheel fully disabled
 local modes = { "n", "v", "i" }

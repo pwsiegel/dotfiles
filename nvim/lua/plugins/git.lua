@@ -14,41 +14,16 @@ return {
         },
     },
     {
-        "tpope/vim-fugitive",
-        cmd = { "Git", "Gdiff", "Gdiffsplit", "Gvdiffsplit", "Gread", "Gwrite" },
-        keys = {
-            -- <leader>gs: open the status pane, or focus it if already open.
-            {
-                "<leader>gs",
-                function()
-                    for _, win in ipairs(vim.api.nvim_list_wins()) do
-                        local buf = vim.api.nvim_win_get_buf(win)
-                        if vim.bo[buf].filetype == "fugitive" then
-                            vim.api.nvim_set_current_win(win)
-                            return
-                        end
-                    end
-                    vim.cmd("vertical Git")
-                    vim.cmd("vertical resize " .. math.floor(vim.o.columns * 0.25))
-                end,
-                desc = "Open/focus git status",
-            },
-            -- <leader>gq: close the status pane from anywhere.
-            -- (Or press `q` / `gq` from inside the pane — fugitive defaults.)
-            {
-                "<leader>gq",
-                function()
-                    for _, win in ipairs(vim.api.nvim_list_wins()) do
-                        local buf = vim.api.nvim_win_get_buf(win)
-                        if vim.bo[buf].filetype == "fugitive" then
-                            vim.api.nvim_win_close(win, false)
-                            return
-                        end
-                    end
-                end,
-                desc = "Close git status",
-            },
+        "NeogitOrg/neogit",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            "sindrets/diffview.nvim",
         },
+        cmd = "Neogit",
+        keys = {
+            { "<leader>gg", "<cmd>Neogit<cr>", desc = "Open Neogit" },
+        },
+        opts = {},
     },
     {
         "sindrets/diffview.nvim",
