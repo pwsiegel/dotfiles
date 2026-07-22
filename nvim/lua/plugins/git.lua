@@ -8,8 +8,8 @@ return {
                 local map = function(lhs, rhs, desc)
                     vim.keymap.set("n", lhs, rhs, { buffer = bufnr, desc = desc })
                 end
-                map("]c", function() gs.nav_hunk("next") end, "Next hunk")
-                map("[c", function() gs.nav_hunk("prev") end, "Prev hunk")
+                map("<leader>l", function() gs.nav_hunk("next") end, "Next hunk")
+                map("<leader>h", function() gs.nav_hunk("prev") end, "Prev hunk")
             end,
         },
     },
@@ -33,7 +33,7 @@ return {
             { "<leader>gV", "<cmd>DiffviewClose<cr>", desc = "Close diff view" },
         },
         opts = {
-            use_icons = false, -- no nerd font installed
+            use_icons = true,
         },
     },
 }

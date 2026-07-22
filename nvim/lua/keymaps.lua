@@ -1,16 +1,18 @@
 local map = vim.keymap.set
 
 -- General
-map("n", "<leader>r", function()
-    vim.cmd("source $MYVIMRC")
-    vim.cmd("nohlsearch")
-end, { desc = "Reload config" })
 map("n", "<leader>/", ":nohlsearch<CR>", { silent = true })
 map("n", "<leader>j", "<C-d>zz")
 map("n", "<leader>k", "<C-u>zz")
 
+-- Git
+-- Load all modified + untracked files into the arglist for review, then
+-- browse them with the buffer-nav arrows below.
+map("n", "<leader>gc", ":args `git ls-files -m -o --exclude-standard`<CR>", { desc = "Args: changed files" })
+
 -- Buffers / windows
 map("n", "<leader>x", ":bd<CR>")
+map("n", "<leader>X", ":%bd<CR>", { desc = "Close all buffers" })
 map("n", "<Left>",   ":bp<CR>", { silent = true })
 map("n", "<Right>",  ":bn<CR>", { silent = true })
 -- Window cycling (works from terminal mode too, so it pops you out of the
