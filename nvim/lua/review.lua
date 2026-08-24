@@ -92,5 +92,3 @@ end, {
     complete = complete_branches,
     desc = "Load files changed on this branch vs base; set gitsigns base to the branch point",
 })
-
-vim.keymap.set("n", "<leader>gc", "<cmd>ReviewBranch<cr>", { desc = "Review branch changes vs default" })

@@ -6,7 +6,7 @@ map("n", "<leader>j", "<C-d>zz")
 map("n", "<leader>k", "<C-u>zz")
 
 -- Git
--- (Branch review lives in review.lua: <leader>gc / :ReviewBranch)
+-- (Branch review lives in review.lua: :ReviewBranch)
 
 -- Buffers / windows
 map("n", "<leader>x", ":bd<CR>")
