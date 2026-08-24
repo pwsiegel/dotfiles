@@ -4,6 +4,7 @@ vim.g.maplocalleader = " "
 
 require("options")
 require("keymaps")
+require("review")
 
 -- Bootstrap lazy.nvim (vendor-less; clones itself on first run).
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"

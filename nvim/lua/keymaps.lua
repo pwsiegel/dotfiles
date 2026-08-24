@@ -6,9 +6,7 @@ map("n", "<leader>j", "<C-d>zz")
 map("n", "<leader>k", "<C-u>zz")
 
 -- Git
--- Load all modified + untracked files into the arglist for review, then
--- browse them with the buffer-nav arrows below.
-map("n", "<leader>gc", ":args `git ls-files -m -o --exclude-standard`<CR>", { desc = "Args: changed files" })
+-- (Branch review lives in review.lua: <leader>gc / :ReviewBranch)
 
 -- Buffers / windows
 map("n", "<leader>x", ":bd<CR>")
